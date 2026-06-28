@@ -98,7 +98,23 @@ Does not:
 
 ---
 
-## Required Switch Format
+## Risk-Based Switch Detail
+
+Use role-switch detail proportional to risk:
+
+| Risk level | Required switch style |
+|---|---|
+| L0 | Inline role label is enough, e.g. `Role: Executor` |
+| L1 | Inline role label plus scope is enough |
+| L2 | Short role switch recommended: from, to, reason, scope |
+| L3 | Full `ROLE SWITCH` format required |
+| L4 | Full `ROLE SWITCH` format required, and AI must not switch into Operator mode |
+
+For L0/L1 work, do not create unnecessary ceremony.
+
+For L3/L4 work, make the role boundary explicit and skeptical.
+
+## Full Role Switch Format
 
 ```md
 ROLE SWITCH

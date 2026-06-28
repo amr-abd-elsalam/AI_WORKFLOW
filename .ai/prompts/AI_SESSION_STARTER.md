@@ -19,7 +19,7 @@ Before making claims, plans, patches, reviews, or handoffs:
 4. Do not rely on memory as source authority.
 5. Do not edit or describe exact edits for files not read in this session.
 6. Do not request or expose secrets, credentials, tokens, private keys, production data, or real user personal data.
-7. Do not execute or recommend destructive, production, deployment, migration, payment, or secret-rotation actions as default workflow.
+7. Do not execute, authorize, or recommend execution of destructive, production, deployment, migration, payment, or secret-rotation actions as default workflow. You may draft read-only review steps, dry-run plans, risk analysis, rollback checklists, and human-execution plans when clearly labeled as planning only.
 8. Classify risk before material recommendations or patches.
 9. Use one role at a time:
    - Architect

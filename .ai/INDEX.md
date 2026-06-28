@@ -10,9 +10,10 @@ It is stable navigation, not project state.
 
 | File | Purpose |
 |---|---|
-| `../ARCHITECT_RULES.md` | Stable governance rules. Highest authority in this repository workflow. |
-| `../SOLO_AI_ENGINEERING_METHOD.md` | Educational method for one human working with AI. |
+| `ARCHITECT_RULES.md` | Stable governance rules. Highest authority in this repository workflow. |
+| `SOLO_AI_ENGINEERING_METHOD.md` | Educational method for one human working with AI. |
 | `.ai/QUICKSTART.md` | Daily compact usage guide. |
+| `.ai/CHEATSHEET.md` | One-page daily workflow reminder. |
 | `.ai/INDEX.md` | Navigation map. |
 
 ---
