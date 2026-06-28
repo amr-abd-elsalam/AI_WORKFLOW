@@ -48,25 +48,25 @@ Mutable context is advisory. It must be revalidated against current repository e
 
 When workflow files overlap, use this authority order:
 
-1. `ARCHITECT_RULES.md`  
+1. `ARCHITECT_RULES.md`
    Stable repository governance. Highest authority for AI behavior in this workflow.
 
-2. `.ai/playbooks/`  
+2. `.ai/playbooks/`
    Operational explanations of the rules.
 
-3. `.ai/prompts/`  
+3. `.ai/prompts/`
    Reusable prompts for AI sessions.
 
-4. `.ai/checklists/`  
+4. `.ai/checklists/`
    Review aids for humans and AI-assisted reviews.
 
-5. `SOLO_AI_ENGINEERING_METHOD.md`  
+5. `SOLO_AI_ENGINEERING_METHOD.md`
    Educational and methodological overview.
 
-6. `README.md` and `.ai/INDEX.md`  
+6. `README.md` and `.ai/INDEX.md`
    Orientation and navigation.
 
-7. Mutable project context files, if created later  
+7. Mutable project context files, if created later
    Advisory only. Must be revalidated against current repository evidence.
 
 If any lower-authority workflow file conflicts with this file, this file wins within repository governance.
@@ -75,31 +75,31 @@ If any lower-authority workflow file conflicts with this file, this file wins wi
 
 ## 2. Core Principles
 
-1. **The repository is the source of truth.**  
+1. **The repository is the source of truth.**
    Current repository files, inspected working-tree changes, reviewed diffs, actual tests, configuration, migrations, scripts, and Git evidence outrank AI memory, prior chats, summaries, dashboards, generated bundles, and documentation.
 
-2. **AI outputs are claims, not facts.**  
+2. **AI outputs are claims, not facts.**
    Any statement about code, behavior, readiness, security, privacy, deployment, performance, migration, financial correctness, or correctness must be supported by evidence.
 
-3. **The human is the authority.**  
+3. **The human is the authority.**
    AI may analyze, propose, draft, review, challenge, and summarize. Humans decide what is accepted, executed, committed, merged, deployed, migrated, rolled back, or deleted.
 
-4. **Unread means unknown.**  
+4. **Unread means unknown.**
    If a file was not read in the current session, the AI does not know its current content.
 
-5. **Prefer the smallest safe change.**  
+5. **Prefer the smallest safe change.**
    Changes should be narrow, reviewable, reversible, testable, and directly tied to the confirmed task or risk.
 
-6. **No false confidence.**  
+6. **No false confidence.**
    Passing tests, documentation, contracts, static SQL, harnesses, generated files, repository shape, or green CI alone do not prove production readiness.
 
-7. **Separate claim, execution, and verification.**  
+7. **Separate claim, execution, and verification.**
    No single AI pass may be treated as claimant, executor, and final judge for material changes affecting code, data, runtime behavior, security, privacy, payments, migrations, deployment, or readiness.
 
-8. **Governance must be proportional to risk.**  
+8. **Governance must be proportional to risk.**
    Low-risk changes may use compact evidence notes. High-risk or production-sensitive work requires expanded reading, verification, escalation, rollback planning, and human approval.
 
-9. **AI is an assistant, not an operator.**  
+9. **AI is an assistant, not an operator.**
    AI must not act as an autonomous operator over code, infrastructure, secrets, production data, payments, migrations, deployments, or destructive operations.
 
 ---
