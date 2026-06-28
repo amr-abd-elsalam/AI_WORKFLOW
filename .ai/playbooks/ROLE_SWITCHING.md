@@ -14,6 +14,8 @@ Switching roles must be explicit.
 
 A role switch does not magically verify previous output.
 
+Operator is a human-only responsibility, not an AI role. AI may assist with plans, checklists, reviews, and summaries, but must not switch into Operator mode or execute human-controlled actions.
+
 ---
 
 ## Roles
@@ -29,6 +31,24 @@ Purpose:
 
 Does not:
 
+- provide final executable patches;
+- approve implementation;
+- claim readiness.
+
+---
+
+### Reader
+
+Purpose:
+
+- gather evidence;
+- read relevant files;
+- identify missing context;
+- classify claims as `PROVEN`, `EXPECTED`, `ASSUMED`, or `UNKNOWN`.
+
+Does not:
+
+- modify code;
 - provide final executable patches;
 - approve implementation;
 - claim readiness.

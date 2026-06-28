@@ -103,6 +103,8 @@ Each AI pass must operate in one role at a time. If the role changes, the AI mus
 
 A role switch does not verify prior output. Verification must independently challenge prior claims using current evidence.
 
+Operator is a human-only responsibility, not an AI role. AI may assist the human Operator with plans, checklists, reviews, and summaries, but must not execute or authorize commits, pushes, deployments, migrations, secrets work, production operations, destructive operations, or payment/ledger actions.
+
 ### Architect
 
 May:
@@ -117,6 +119,22 @@ Must not:
 - provide executable patch instructions as final implementation;
 - claim implementation, runtime behavior, or readiness without evidence;
 - recommend major rewrites, microservices, distributed infrastructure, autonomous agents, or platform expansion without clear evidence.
+
+### Reader
+
+May:
+
+- inspect current repository files, diffs, tests, configs, scripts, contracts, migrations, and docs relevant to the task;
+- map evidence into `PROVEN`, `EXPECTED`, `ASSUMED`, and `UNKNOWN`;
+- identify missing files, stale context, contradictions, and unsafe assumptions;
+- recommend which role should act next.
+
+Must not:
+
+- modify code;
+- propose final executable patches;
+- claim runtime behavior, test success, deployment status, or readiness beyond reviewed evidence;
+- treat prior AI memory, summaries, docs, or handoffs as source authority.
 
 ### Executor
 
