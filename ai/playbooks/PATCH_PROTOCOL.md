@@ -1,0 +1,160 @@
+# Patch Protocol Playbook
+
+This playbook defines how AI should propose patches.
+
+It is stable guidance, not project state.
+
+---
+
+## Principle
+
+A patch should be small, reviewable, reversible, testable, and tied to a confirmed task or risk.
+
+Avoid cleverness.
+Avoid scope creep.
+Avoid hidden activation.
+
+---
+
+## Patch Categories
+
+Use one primary category:
+
+- `docs-only`
+- `test-only`
+- `runtime-behavior`
+- `config`
+- `migration`
+- `dependency`
+- `security`
+- `privacy`
+- `generated`
+- `refactor`
+- `build-ci`
+- `release-deployment`
+- `ai-product`
+- `cleanup`
+
+If multiple categories apply, state the primary one and list secondary categories.
+
+---
+
+## Before Proposing a Patch
+
+State:
+
+```md
+Role:
+Risk level:
+Patch category:
+Files read:
+Requirement or risk addressed:
+Scope:
+Expected side effects:
+What this patch proves:
+What this patch does not prove:
+Suggested verification:
+Rollback/reversal:
+```
+
+---
+
+## Existing File Patch Format
+
+Use exact `FIND/REPLACE`.
+
+````md
+path/to/file.ext
+
+FIND:
+exact current content
+
+REPLACE:
+new content
+````
+
+Rules:
+
+- `FIND` must match current content exactly.
+- Include enough context to make it unique.
+- Do not provide approximate instructions when exact text is required.
+- Keep the replacement minimal.
+
+---
+
+## New File Patch Format
+
+````md
+NEW FILE: path/to/file.ext
+
+complete file content
+````
+
+Rules:
+
+- Provide complete content.
+- Do not provide partial new files unless explicitly requested.
+
+---
+
+## Deletion Format
+
+````md
+DELETE: path/to/file.ext
+Reason:
+Rollback:
+````
+
+---
+
+## Forbidden Patch Behavior
+
+Do not include:
+
+- hidden runtime activation;
+- hidden feature flags;
+- hidden background jobs;
+- hidden schedulers;
+- hidden queue consumers;
+- hidden DB connections;
+- hidden external calls;
+- hidden dual-writes;
+- hidden data migrations;
+- hidden telemetry;
+- dependency changes without approval;
+- formatting churn;
+- broad rewrites;
+- unrelated refactors;
+- generated-file changes hidden from review;
+- security weakening without explicit `DEV-ONLY / INSECURE` labeling.
+
+---
+
+## Rollback Notes
+
+For L0/L1:
+
+- "Revert this patch."
+
+For L2:
+
+- describe affected files and expected reversal.
+
+For L3/L4:
+
+- include rollback sequence, data concerns, config concerns, and human approval requirements.
+
+---
+
+## Patch Review Questions
+
+Before finalizing, ask:
+
+1. Is this the smallest safe change?
+2. Did I read every file I edit?
+3. Did I avoid unrelated changes?
+4. Did I introduce side effects?
+5. Did I alter runtime behavior?
+6. Did I touch sensitive data, auth, payments, migrations, deployment, or secrets?
+7. Is verification proportional to risk?
+8. Is rollback clear enough?
