@@ -15,6 +15,7 @@ Follow `ARCHITECT_RULES.md`.
 
 Use relevant playbooks if available:
 
+- `.ai/playbooks/ROLE_OUTPUT_CONTRACT.md`
 - `.ai/playbooks/HANDOFF_TEMPLATE.md`
 - `.ai/playbooks/CONTEXT_MANAGEMENT.md`
 - `.ai/playbooks/VERIFICATION_LADDER.md`
@@ -67,19 +68,34 @@ A handoff is not source authority. It is a map for the next session.
 
 ## Required Output
 
-```md
+````md
 # AI Handoff
 
-## Task Goal
--
+## Role
+Handoff Scribe
 
-## Role(s) Used
+## Task Goal
 -
 
 ## Risk Level
 -
 
+## Why This Risk Level
+-
+
+## Repository Access Mode
+- Direct tool access / Pasted excerpts only / No file access / Unknown
+
+## Role(s) Used
+-
+
+## Relevant Rules / Playbooks
+-
+
 ## Files Read
+-
+
+## Files Not Read But Needed
 -
 
 ## Files Changed or Proposed
@@ -97,16 +113,24 @@ A handoff is not source authority. It is a map for the next session.
 ## Verification Level
 -
 
-## PROVEN
+## Evidence Status
+
+### PROVEN
 -
 
-## EXPECTED
+### EXPECTED
 -
 
-## ASSUMED
+### ASSUMED
 -
 
-## UNKNOWN
+### UNKNOWN
+-
+
+## Constraints
+-
+
+## What I Must Not Do
 -
 
 ## Risks and Open Questions
@@ -130,8 +154,70 @@ A handoff is not source authority. It is a map for the next session.
 ## Human Decisions Required
 -
 
+## Verification Needed
+-
+
+## Escalation Needed?
+-
+
+## Next Role Recommendation
+-
+
+## Prompt For Next Role
+
+```text
+Role: [Architect / Reader / Executor / Verifier / Handoff Scribe]
+
+Task:
+[State the exact next task for the next session.]
+
+Repository access:
+[Direct tool access / Pasted excerpts only / No file access / Unknown]
+
+Files already read:
+[List files read in the previous session. Treat them as needing re-read if freshness matters.]
+
+Files you must read before acting:
+[List exact files the next role must read before making claims, plans, patches, reviews, or handoffs.]
+
+Evidence from previous role:
+PROVEN:
+- [Facts directly supported by evidence in the previous session]
+
+EXPECTED:
+- [Expected but not directly observed]
+
+ASSUMED:
+- [Context that must remain assumed until re-verified]
+
+UNKNOWN:
+- [Unknowns that must not be overclaimed]
+
+Risk level:
+[Risk level and reason]
+
+Verification level:
+[Verification level and scope]
+
+Constraints:
+[Scope limits and rules]
+
+Do not:
+- Do not treat this handoff as source authority.
+- Do not rely on prior AI memory as evidence.
+- Do not edit files before re-reading the exact current content.
+- Do not claim commits, branch state, CI, deployment, migration, test status, security correctness, privacy correctness, or production readiness unless current evidence is reviewed.
+- Do not convert plans, recommendations, assumptions, or expected behavior into completed facts.
+
+Required output:
+Use the required output format for the selected role.
+Include Evidence Status with PROVEN, EXPECTED, ASSUMED, UNKNOWN.
+Include Files Read and Files Not Read But Needed.
+Include Prompt For Next Role unless escalation or human-only Operator work is required.
+```
+
 ## Freshness Warning
 
 This handoff is not source authority.
 The next session must re-read relevant files, diffs, and test output before relying on it.
-```
+````
