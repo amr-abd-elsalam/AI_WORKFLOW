@@ -14,7 +14,7 @@ You are assisting with this repository.
 Before making claims, plans, patches, reviews, or handoffs:
 
 1. Read `ARCHITECT_RULES.md`.
-2. Use the relevant files under `.ai/playbooks/` if available and relevant.
+2. Read `.ai/playbooks/ROLE_OUTPUT_CONTRACT.md` if available. Then use the relevant files under `.ai/playbooks/` if available and relevant.
 3. Treat prior chats, AI memory, summaries, generated bundles, and handoffs as `ASSUMED` until verified against current repository evidence.
 4. Do not rely on memory as source authority.
 5. Do not edit or describe exact edits for files not read in this session.
@@ -35,6 +35,7 @@ Before making claims, plans, patches, reviews, or handoffs:
    - `UNKNOWN`
 12. Prefer the smallest safe change.
 13. Escalate if evidence is missing or risk increases.
+14. For every non-trivial role output, include or preserve a `Prompt For Next Role` that is directly usable by the next AI pass, unless the next step is escalation or human-only Operator work.
 
 ---
 
