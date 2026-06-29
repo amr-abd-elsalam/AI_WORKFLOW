@@ -15,6 +15,7 @@ Follow `ARCHITECT_RULES.md`.
 
 Use relevant playbooks if available:
 
+- `.ai/playbooks/ROLE_OUTPUT_CONTRACT.md`
 - `.ai/playbooks/VERIFICATION_LADDER.md`
 - `.ai/playbooks/RISK_LEVELS.md`
 - `.ai/playbooks/PATCH_PROTOCOL.md`
@@ -84,16 +85,28 @@ Look for:
 
 ## Required Output
 
-```md
+````md
 ## Review
 
 ### Role
 Verifier
 
+### Task
+-
+
 ### Risk Level
 -
 
+### Why This Risk Level
+-
+
 ### Verification Level
+-
+
+### Repository Access Mode
+- Direct tool access / Pasted excerpts only / No file access / Unknown
+
+### Relevant Rules / Playbooks
 -
 
 ### Evidence Reviewed
@@ -102,43 +115,71 @@ Verifier
 ### Evidence Not Reviewed
 -
 
-### Summary
+### Files Read
 -
 
-### Findings
+### Files Not Read But Needed
+-
 
-#### 1. [Severity] Title
+### Constraints
+-
+
+### What I Must Not Do
+-
+
+### Evidence Status
+
+#### PROVEN
+-
+
+#### EXPECTED
+-
+
+#### ASSUMED
+-
+
+#### UNKNOWN
+-
+
+### Output Produced
+
+#### Summary
+-
+
+#### Findings
+
+##### 1. [Severity] Title
 - Evidence:
 - Why it matters:
 - Recommendation:
 
-#### 2. [Severity] Title
+##### 2. [Severity] Title
 - Evidence:
 - Why it matters:
 - Recommendation:
 
-### Positive Notes
+#### Positive Notes
 -
 
-### Tests / Checks Reviewed
+#### Tests / Checks Reviewed
 -
 
-### Tests / Checks Missing
+#### Tests / Checks Missing
 -
 
-### Security / Privacy Review
+#### Security / Privacy Review
 -
 
-### Data / Migration / Deployment Review
+#### Data / Migration / Deployment Review
 -
 
-### False Confidence Risks
+#### False Confidence Risks
 -
 
-### Required Human Decisions
+#### Required Human Decisions
 -
 
-### Recommendation
+#### Recommendation
 
 Choose one:
 
@@ -147,4 +188,74 @@ Choose one:
 - Request changes
 - Escalate before proceeding
 - Insufficient evidence to review
+
+### Verification Needed
+-
+
+### Escalation Needed?
+-
+
+### Next Role Recommendation
+-
+
+### Prompt For Next Role
+
+```text
+Role: [Executor / Reader / Architect / Handoff Scribe]
+
+Task:
+[State the exact next task. If findings require changes, ask Executor for a minimal correction patch. If evidence is missing, ask Reader to gather the missing evidence. If scope or risk needs replanning, ask Architect. If accepted within reviewed scope, ask Handoff Scribe to record an accurate handoff.]
+
+Repository access:
+[Direct tool access / Pasted excerpts only / No file access / Unknown]
+
+Files already read:
+[List files read by Reviewer/Verifier in this session]
+
+Files you must read before acting:
+[List files the next role must read before acting. If Executor is next, include every file it may edit.]
+
+Evidence from previous role:
+PROVEN:
+- [Directly supported evidence from review]
+
+EXPECTED:
+- [Expected but not directly observed]
+
+ASSUMED:
+- [Assumptions that must not be promoted to facts]
+
+UNKNOWN:
+- [Unknowns that remain after review]
+
+Risk level:
+[Risk level and reason]
+
+Verification level:
+[Verification level and reviewed scope]
+
+Review findings to carry forward:
+- [List findings, severities, evidence, and recommendations]
+
+Constraints:
+[Scope limits and rules]
+
+Do not:
+- Do not treat this review as broader than its reviewed scope.
+- Do not claim CI passed unless actual CI output was reviewed.
+- Do not claim deployment happened unless deployment evidence was reviewed.
+- Do not claim production readiness, migration completion, full security, full privacy correctness, or complete correctness unless exhaustively verified for the exact stated scope.
+- Do not convert assumptions or expected behavior into proven facts.
+- If acting as Executor, do not broaden the patch beyond the reviewed findings.
+- If acting as Handoff Scribe, do not turn review recommendations or unverified claims into completed facts.
+
+Required output:
+If Role is Executor, return a minimal correction Executor Pass using `Output Patch Rules — Strict` and include Prompt For Next Role.
+
+If Role is Reader, return a Reader Pass focused only on missing evidence and include Prompt For Next Role.
+
+If Role is Architect, return an Architect Pass focused on re-planning the unsafe or unclear scope and include Prompt For Next Role.
+
+If Role is Handoff Scribe, return an AI Handoff that separates files read, files changed or proposed, verification level, PROVEN, EXPECTED, ASSUMED, UNKNOWN, risks, next safe options, and human decisions. Include a next-session prompt.
 ```
+````
