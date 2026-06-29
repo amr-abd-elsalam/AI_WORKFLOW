@@ -31,7 +31,9 @@ Notes:
 - [ ] Relevant callers/dependencies were read where needed.
 - [ ] Relevant tests were read where needed.
 - [ ] Relevant configs/scripts/migrations were read where needed.
+- [ ] Files not read but needed are listed explicitly.
 - [ ] Any unread but relevant files are listed as unknown.
+- [ ] Repository access mode is stated.
 - [ ] Prior handoffs or summaries are treated as `ASSUMED`, not source truth.
 
 Notes:
@@ -44,10 +46,14 @@ Notes:
 
 ## 3. Patch Format
 
+- [ ] Patch uses `Output Patch Rules — Strict`.
 - [ ] Existing file edits use exact `FIND/REPLACE` blocks.
 - [ ] `FIND` blocks appear exact and unique.
+- [ ] `FIND` blocks are the smallest unique blocks that safely locate the edits.
+- [ ] No ellipses are used in `FIND` or `REPLACE`.
 - [ ] New files are provided in full.
 - [ ] Deletions are explicit and justified.
+- [ ] Unsafe edits with insufficient context request the exact file instead of guessing.
 - [ ] Paths, identifiers, commands, and code are in English.
 - [ ] Explanatory prose is understandable to the human owner.
 
@@ -132,7 +138,25 @@ Notes:
 
 ---
 
-## 8. Decision
+## 8. Role Output Contract
+
+- [ ] The output includes `Prompt For Next Role` when another AI pass is needed.
+- [ ] The next role is appropriate for the current evidence and risk.
+- [ ] The next-role prompt lists files already read.
+- [ ] The next-role prompt lists files the next role must read before acting.
+- [ ] The next-role prompt transfers `PROVEN`, `EXPECTED`, `ASSUMED`, and `UNKNOWN` without inflating certainty.
+- [ ] The next-role prompt states what the next role must not do.
+- [ ] If the next step is human-only Operator work, AI provides a decision packet or checklist instead of becoming Operator.
+
+Notes:
+
+```text
+
+```
+
+---
+
+## 9. Decision
 
 Choose one:
 
