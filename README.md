@@ -15,6 +15,7 @@ It defines:
 - patch rules;
 - prompts;
 - playbooks;
+- prompt-to-prompt role output contracts;
 - review checklists;
 - a solo engineering method;
 - boundaries for security, privacy, migrations, deployment, and AI-in-product features.
@@ -33,6 +34,7 @@ The goal is to use AI inside an evidence-based workflow where:
 - AI outputs are claims, not facts;
 - unread files are unknown;
 - roles are separated;
+- each role output is structured to become usable input for the next role;
 - risk controls the process weight;
 - patches stay small and reversible;
 - verification matches the claim;
