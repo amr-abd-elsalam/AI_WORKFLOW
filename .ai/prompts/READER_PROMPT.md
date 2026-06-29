@@ -15,6 +15,7 @@ Follow `ARCHITECT_RULES.md`.
 
 Use relevant playbooks if available:
 
+- `.ai/playbooks/ROLE_OUTPUT_CONTRACT.md`
 - `.ai/playbooks/VERIFICATION_LADDER.md`
 - `.ai/playbooks/RISK_LEVELS.md`
 - `.ai/playbooks/CONTEXT_MANAGEMENT.md`
@@ -66,22 +67,34 @@ If the task touches security, privacy, payments, migrations, production data, de
 
 ## Required Output
 
-```md
+````md
 ## Reader Pass
 
-### Goal
+### Role
+Reader
+
+### Task
 -
 
 ### Risk Level
 -
 
+### Why This Risk Level
+-
+
+### Repository Access Mode
+- Direct tool access / Pasted excerpts only / No file access / Unknown
+
+### Relevant Rules / Playbooks
+-
+
 ### Files Read
 -
 
-### Files Not Read But Likely Relevant
+### Files Not Read But Needed
 -
 
-### Evidence Map
+### Evidence Status
 
 #### PROVEN
 -
@@ -95,30 +108,117 @@ If the task touches security, privacy, payments, migrations, production data, de
 #### UNKNOWN
 -
 
-### Relevant Runtime Paths
+### Constraints
 -
 
-### Relevant Tests
+### What I Must Not Do
 -
 
-### Relevant Config / Scripts / Migrations
+### Output Produced
+
+#### Relevant Runtime Paths
 -
 
-### Docs or Contracts That Need Verification
+#### Relevant Tests
 -
 
-### Missing Evidence
+#### Relevant Config / Scripts / Migrations
 -
 
-### Risks
+#### Docs or Contracts That Need Verification
 -
 
-### Recommended Next Role
+#### Missing Evidence
 -
 
-### Smallest Safe Next Step
+#### Risks
+-
+
+#### Evidence Sufficient For Patch?
+- yes/no
+
+#### If Not Sufficient, Why?
+-
+
+#### Recommended Next Role
+-
+
+#### Smallest Safe Next Step
+-
+
+### Verification Needed
 -
 
 ### Escalation Needed?
 -
+
+### Next Role Recommendation
+-
+
+### Prompt For Next Role
+
+```text
+Role: [Executor / Architect / Verifier / Handoff Scribe]
+
+Task:
+[State the exact next task. If evidence is sufficient, ask Executor for the smallest safe patch. If evidence is insufficient, ask Architect to re-plan or ask for missing files.]
+
+Repository access:
+[Direct tool access / Pasted excerpts only / No file access / Unknown]
+
+Files already read:
+[List files read by Reader in this session]
+
+Files you must read before acting:
+[List files the next role must read before acting. If Executor is next, include every file it may edit.]
+
+Evidence from previous role:
+PROVEN:
+- [Directly supported evidence]
+
+EXPECTED:
+- [Expected but not directly observed]
+
+ASSUMED:
+- [Assumptions to preserve as assumptions]
+
+UNKNOWN:
+- [Unknowns the next role must not overclaim]
+
+Risk level:
+[Risk level and reason]
+
+Constraints:
+[Scope limits and rules]
+
+Do not:
+- Do not edit files not read in this session.
+- Do not broaden scope beyond the evidence.
+- Do not treat Reader output as source authority for unread files.
+- Do not claim runtime behavior, production readiness, deployment status, migration status, security correctness, privacy correctness, or financial correctness without evidence.
+- If acting as Executor, do not self-approve.
+
+Required output:
+If Role is Executor, return an Executor Pass with:
+- Role
+- Risk Level
+- Patch Category
+- Repository Access Mode
+- Files Read
+- Files Not Read But Needed
+- Requirement / Risk Addressed
+- Scope
+- Expected Side Effects
+- Evidence Status with PROVEN, EXPECTED, ASSUMED, UNKNOWN
+- What This Patch Proves
+- What This Patch Does Not Prove
+- Patch using exact FIND/REPLACE, NEW FILE, or DELETE blocks
+- Suggested Verification
+- Rollback / Reversal
+- Human Decisions Required
+- Escalation Needed?
+- Prompt For Next Role
+
+If Role is not Executor, use that role's required output format and include Prompt For Next Role.
 ```
+````
