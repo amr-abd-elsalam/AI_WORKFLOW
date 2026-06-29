@@ -151,7 +151,7 @@ Executor
 
 ### Patch
 
-[Use exact FIND/REPLACE, NEW FILE, or DELETE blocks. Existing-file FIND blocks must match current file content exactly. Do not provide approximate edit instructions.]
+[Use only the formats in `Output Patch Rules — Strict`. Existing-file `FIND` blocks must match current file content exactly. If exact `FIND` cannot be guaranteed, output the unsafe/context-needed form instead of guessing.]
 
 ### Suggested Verification
 -
@@ -246,34 +246,47 @@ Return a Verifier Pass with:
 
 ---
 
-## Existing File Format
+## Output Patch Rules — Strict
 
-````md
-path/to/file.ext
+You must output edits only in one of these forms.
 
-FIND:
-exact current content
+### Existing file
 
-REPLACE:
-new content
-````
+```text
+📄 path/to/file.ext
 
----
+🔍 FIND:
+<exact current content>
 
-## New File Format
+✏️ REPLACE:
+<replacement content>
+```
 
-````md
-NEW FILE: path/to/file.ext
+Rules:
 
-complete file content
-````
+```text
+- FIND must be an exact match from the current file.
+- FIND must be the smallest unique block that safely locates the edit.
+- Do not use ellipses.
+- Do not output whole files for small edits.
+- If multiple edits are needed in one file, output multiple separate FIND/REPLACE blocks.
+- If exact FIND cannot be guaranteed, do not guess. Ask to read the file.
+```
 
----
+### New file
 
-## Delete Format
+```text
+📄 path/to/new-file.ext
 
-````md
-DELETE: path/to/file.ext
-Reason:
-Rollback:
-````
+```text
+<full file content>
+```
+```
+
+Use the appropriate language fence for the new file when known, such as `md`, `js`, `ts`, `py`, `json`, `yaml`, or `text`.
+
+### Unsafe / not enough context
+
+```text
+⚠️ Need to read path/to/file.ext before proposing a safe edit.
+```

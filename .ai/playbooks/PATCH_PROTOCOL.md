@@ -59,51 +59,50 @@ Rollback/reversal:
 
 ---
 
-## Existing File Patch Format
+## Output Patch Rules — Strict
 
-Use exact `FIND/REPLACE`.
+You must output edits only in one of these forms.
 
-````md
-path/to/file.ext
+### Existing file
 
-FIND:
-exact current content
+```text
+📄 path/to/file.ext
 
-REPLACE:
-new content
-````
+🔍 FIND:
+<exact current content>
 
-Rules:
-
-- `FIND` must match current content exactly.
-- Include enough context to make it unique.
-- Do not provide approximate instructions when exact text is required.
-- Keep the replacement minimal.
-
----
-
-## New File Patch Format
-
-````md
-NEW FILE: path/to/file.ext
-
-complete file content
-````
+✏️ REPLACE:
+<replacement content>
+```
 
 Rules:
 
-- Provide complete content.
-- Do not provide partial new files unless explicitly requested.
+```text
+- FIND must be an exact match from the current file.
+- FIND must be the smallest unique block that safely locates the edit.
+- Do not use ellipses.
+- Do not output whole files for small edits.
+- If multiple edits are needed in one file, output multiple separate FIND/REPLACE blocks.
+- If exact FIND cannot be guaranteed, do not guess. Ask to read the file.
+```
 
----
+### New file
 
-## Deletion Format
+```text
+📄 path/to/new-file.ext
 
-````md
-DELETE: path/to/file.ext
-Reason:
-Rollback:
-````
+```text
+<full file content>
+```
+```
+
+Use the appropriate language fence for the new file when known, such as `md`, `js`, `ts`, `py`, `json`, `yaml`, or `text`.
+
+### Unsafe / not enough context
+
+```text
+⚠️ Need to read path/to/file.ext before proposing a safe edit.
+```
 
 ---
 
