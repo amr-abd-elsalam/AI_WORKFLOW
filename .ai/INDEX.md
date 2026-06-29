@@ -66,6 +66,7 @@ If files overlap:
 |---|---|
 | Understand risk levels | `.ai/playbooks/RISK_LEVELS.md` |
 | Understand verification levels | `.ai/playbooks/VERIFICATION_LADDER.md` |
+| Understand role-to-role output contracts | `.ai/playbooks/ROLE_OUTPUT_CONTRACT.md` |
 | Switch AI roles safely | `.ai/playbooks/ROLE_SWITCHING.md` |
 | Draft safe patches | `.ai/playbooks/PATCH_PROTOCOL.md` |
 | Manage stable vs mutable context | `.ai/playbooks/CONTEXT_MANAGEMENT.md` |
