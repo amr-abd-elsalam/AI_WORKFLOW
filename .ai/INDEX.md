@@ -62,6 +62,8 @@ If files overlap:
 
 ## Which Playbook Should I Read?
 
+Use `.ai/playbooks/ROLE_OUTPUT_CONTRACT.md` when the goal is to make each role output directly usable as input for the next role.
+
 | Need | Playbook |
 |---|---|
 | Understand risk levels | `.ai/playbooks/RISK_LEVELS.md` |
