@@ -275,13 +275,13 @@ Rules:
 
 ### New file
 
-```text
+````text
 📄 path/to/new-file.ext
 
 ```text
 <full file content>
 ```
-```
+````
 
 Use the appropriate language fence for the new file when known, such as `md`, `js`, `ts`, `py`, `json`, `yaml`, or `text`.
 
