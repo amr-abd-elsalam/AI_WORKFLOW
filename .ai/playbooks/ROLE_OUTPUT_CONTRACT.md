@@ -126,7 +126,7 @@ Use this envelope as the default shape.
 
 Prompts may adapt it, but must preserve the same information.
 
-```md
+````md
 ## Role Output
 
 ### Role
@@ -211,6 +211,7 @@ Do not:
 Required output:
 [exact required output format]
 ```
+````
 
 ---
 
