@@ -15,6 +15,7 @@ Follow `ARCHITECT_RULES.md`.
 
 Use relevant playbooks if available:
 
+- `.ai/playbooks/ROLE_OUTPUT_CONTRACT.md`
 - `.ai/playbooks/RISK_LEVELS.md`
 - `.ai/playbooks/ROLE_SWITCHING.md`
 - `.ai/playbooks/CONTEXT_MANAGEMENT.md`
@@ -82,10 +83,12 @@ Identify:
 
 ## Required Output
 
-```md
 ## Architect Pass
 
-### Goal
+### Role
+Architect
+
+### Task
 -
 
 ### Risk Level
@@ -94,52 +97,149 @@ Identify:
 ### Why This Risk Level
 -
 
+### Repository Access Mode
+- Direct tool access / Pasted excerpts only / No file access / Unknown
+
 ### Relevant Rules / Playbooks
 -
 
-### Current Evidence
+### Files Read
 -
 
-### Assumptions
+### Files Not Read But Needed
 -
 
-### Unknowns
+### Evidence Status
+
+#### PROVEN
 -
 
-### Likely Relevant Files / Areas to Read
+#### EXPECTED
 -
 
-### Risks
+#### ASSUMED
 -
 
-### False-Confidence Traps
+#### UNKNOWN
 -
 
-### Options
+### Constraints
+-
 
-#### Option 1
+### What I Must Not Do
+-
+
+### Output Produced
+
+#### Problem Being Solved
+-
+
+#### Likely Affected Areas
+-
+
+#### Evidence Needed Before Implementation
+-
+
+#### Risks
+-
+
+#### False-Confidence Traps
+-
+
+#### Options
+
+##### Option 1
 - Summary:
 - Pros:
 - Cons:
 - Verification needed:
 - Rollback/reversal:
 
-#### Option 2
+##### Option 2
 - Summary:
 - Pros:
 - Cons:
 - Verification needed:
 - Rollback/reversal:
 
-### Recommendation
+#### Recommendation
 -
 
-### Smallest Safe Next Step
+#### Smallest Safe Next Step
 -
 
-### Do Not Do Yet
+#### Do Not Do Yet
+-
+
+### Verification Needed
 -
 
 ### Escalation Needed?
 -
+
+### Next Role Recommendation
+-
+
+### Prompt For Next Role
+
+```text
+Role: Reader
+
+Task:
+Build an evidence map for this task before any implementation.
+
+Repository access:
+[Direct tool access / Pasted excerpts only / No file access / Unknown]
+
+Files already read:
+[List files read by Architect in this session]
+
+Files you must read before acting:
+[List exact files or areas identified by Architect]
+
+Evidence from previous role:
+PROVEN:
+- [Directly supported evidence]
+
+EXPECTED:
+- [Expected but not directly observed]
+
+ASSUMED:
+- [Assumptions to verify]
+
+UNKNOWN:
+- [Unknowns to resolve]
+
+Risk level:
+[Risk level and reason]
+
+Constraints:
+[Scope limits and rules]
+
+Do not:
+- Do not propose patches.
+- Do not rewrite code.
+- Do not infer unread file contents.
+- Do not treat this Architect pass as source authority.
+- Do not claim runtime behavior, production readiness, deployment status, migration status, security correctness, privacy correctness, or financial correctness without evidence.
+
+Required output:
+Return a Reader Pass with these sections:
+- Role
+- Task
+- Risk Level
+- Repository Access Mode
+- Files Read
+- Files Not Read But Needed
+- Evidence Status with PROVEN, EXPECTED, ASSUMED, UNKNOWN
+- Relevant Runtime Paths
+- Relevant Tests
+- Relevant Config / Scripts / Migrations
+- Docs or Contracts That Need Verification
+- Missing Evidence
+- Risks
+- Recommended Next Role
+- Smallest Safe Next Step
+- Escalation Needed?
+- Prompt For Next Role
 ```
