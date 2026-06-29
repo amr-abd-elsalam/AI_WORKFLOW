@@ -13,7 +13,7 @@ AI is speed, not truth.
 Use AI inside an evidence-based workflow:
 
 ```text
-Goal → Risk → Evidence → Smallest safe change → Verification → Human decision
+Goal → Risk → Evidence → Smallest safe change → Verification → Next-role prompt → Human decision
 ```
 
 Never skip:
@@ -22,7 +22,8 @@ Never skip:
 - no production operations by AI;
 - no edits to unread files;
 - no claims beyond evidence;
-- no hidden runtime activation.
+- no hidden runtime activation;
+- no vague handoff when a next-role prompt is needed.
 
 ---
 

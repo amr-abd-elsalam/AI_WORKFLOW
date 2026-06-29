@@ -15,6 +15,7 @@ For most tasks:
 3. Read relevant files.
 4. Make the smallest safe change.
 5. Verify only what the evidence supports.
+6. Preserve a clear prompt for the next role when work continues.
 
 Never skip:
 
@@ -116,7 +117,8 @@ Minimum evidence:
 - target file read;
 - direct callers/dependencies read where material;
 - relevant tests read where material;
-- verification and rollback stated.
+- verification and rollback stated;
+- next role prompt included when another AI pass is needed.
 
 ---
 
