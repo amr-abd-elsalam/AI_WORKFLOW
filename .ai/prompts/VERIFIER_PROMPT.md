@@ -15,6 +15,7 @@ Follow `ARCHITECT_RULES.md`.
 
 Use relevant playbooks if available:
 
+- `.ai/playbooks/ROLE_OUTPUT_CONTRACT.md`
 - `.ai/playbooks/VERIFICATION_LADDER.md`
 - `.ai/playbooks/RISK_LEVELS.md`
 - `.ai/playbooks/PATCH_PROTOCOL.md`
@@ -92,16 +93,28 @@ Do not say production-ready, complete, fully secure, no issues, or ready unless 
 
 ## Required Output
 
-```md
+````md
 ## Verifier Pass
 
 ### Role
 Verifier
 
+### Task
+-
+
 ### Risk Level
 -
 
+### Why This Risk Level
+-
+
 ### Verification Level
+-
+
+### Repository Access Mode
+- Direct tool access / Pasted excerpts only / No file access / Unknown
+
+### Relevant Rules / Playbooks
 -
 
 ### Evidence Reviewed
@@ -110,53 +123,137 @@ Verifier
 ### Evidence Not Reviewed
 -
 
-### PROVEN
+### Files Read
 -
 
-### EXPECTED
+### Files Not Read But Needed
 -
 
-### ASSUMED
+### Constraints
 -
 
-### UNKNOWN
+### What I Must Not Do
 -
 
-### Findings
+### Evidence Status
 
-#### Finding 1
+#### PROVEN
+-
+
+#### EXPECTED
+-
+
+#### ASSUMED
+-
+
+#### UNKNOWN
+-
+
+### Output Produced
+
+#### Findings
+
+##### Finding 1
 - Severity:
 - Evidence:
 - Why it matters:
 - Recommendation:
 
-#### Finding 2
+##### Finding 2
 - Severity:
 - Evidence:
 - Why it matters:
 - Recommendation:
 
-### Hidden Side Effects Check
+#### Hidden Side Effects Check
 -
 
-### Security / Privacy Check
+#### Security / Privacy Check
 -
 
-### Data / Migration / Deployment Check
+#### Data / Migration / Deployment Check
 -
 
-### Tests and Verification Gaps
+#### Tests and Verification Gaps
 -
 
-### Rollback / Recovery Gaps
+#### Rollback / Recovery Gaps
 -
 
-### False Confidence Risks
+#### False Confidence Risks
 -
 
-### Recommendation
+#### Recommendation
 -
 
-### Human Decisions Required
+#### Human Decisions Required
 -
+
+### Verification Needed
+-
+
+### Escalation Needed?
+-
+
+### Next Role Recommendation
+-
+
+### Prompt For Next Role
+
+```text
+Role: [Executor / Reader / Architect / Handoff Scribe]
+
+Task:
+[State the exact next task. If findings require changes, ask Executor for a minimal correction patch. If evidence is missing, ask Reader to gather the missing evidence. If the plan needs reshaping, ask Architect. If acceptable within reviewed scope, ask Handoff Scribe to record an accurate handoff.]
+
+Repository access:
+[Direct tool access / Pasted excerpts only / No file access / Unknown]
+
+Files already read:
+[List files read by Verifier in this session]
+
+Files you must read before acting:
+[List files the next role must read before acting. If Executor is next, include every file it may edit.]
+
+Evidence from previous role:
+PROVEN:
+- [Directly supported evidence from verification]
+
+EXPECTED:
+- [Expected but not directly observed]
+
+ASSUMED:
+- [Assumptions that must not be promoted to facts]
+
+UNKNOWN:
+- [Unknowns that remain after verification]
+
+Risk level:
+[Risk level and reason]
+
+Verification level:
+[Verification level and scope]
+
+Findings to carry forward:
+- [List findings, severities, and evidence]
+
+Constraints:
+[Scope limits and rules]
+
+Do not:
+- Do not treat this verification as broader than its reviewed scope.
+- Do not claim production readiness, deployment status, migration completion, full security, full privacy correctness, or complete correctness unless exhaustively verified for the exact stated scope.
+- Do not convert assumptions or expected behavior into proven facts.
+- If acting as Executor, do not broaden the patch beyond the verified findings.
+- If acting as Handoff Scribe, do not turn plans, recommendations, or unverified claims into completed facts.
+
+Required output:
+If Role is Executor, return a minimal correction Executor Pass using `Output Patch Rules — Strict` and include Prompt For Next Role.
+
+If Role is Reader, return a Reader Pass focused only on the missing evidence and include Prompt For Next Role.
+
+If Role is Architect, return an Architect Pass focused on re-planning the unsafe or unclear scope and include Prompt For Next Role.
+
+If Role is Handoff Scribe, return an AI Handoff that separates files read, files changed or proposed, verification level, PROVEN, EXPECTED, ASSUMED, UNKNOWN, risks, next safe options, and human decisions. Include a next-session prompt.
 ```
+````
