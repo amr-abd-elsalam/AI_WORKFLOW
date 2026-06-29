@@ -17,6 +17,7 @@ Follow `ARCHITECT_RULES.md`.
 
 Use relevant playbooks if available:
 
+- `.ai/playbooks/ROLE_OUTPUT_CONTRACT.md`
 - `.ai/playbooks/RISK_LEVELS.md`
 - `.ai/playbooks/VERIFICATION_LADDER.md`
 - `.ai/playbooks/SECURITY_SECRETS_PRIVACY.md`
@@ -89,16 +90,28 @@ If evidence is missing for a high-risk area, escalate.
 
 ## Required Output
 
-```md
+````md
 ## Release / Deployment Readiness Review
 
 ### Role
 Verifier
 
+### Task
+-
+
 ### Risk Level
 -
 
+### Why This Risk Level
+-
+
 ### Verification Level
+-
+
+### Repository Access Mode
+- Direct tool access / Pasted excerpts only / No file access / Unknown
+
+### Relevant Rules / Playbooks
 -
 
 ### Scope Reviewed
@@ -107,65 +120,81 @@ Verifier
 ### Evidence Reviewed
 -
 
-### Evidence Missing
+### Evidence Not Reviewed
 -
 
-### PROVEN
+### Files Read
 -
 
-### EXPECTED
+### Files Not Read But Needed
 -
 
-### ASSUMED
+### Constraints
 -
 
-### UNKNOWN
+### What I Must Not Do
 -
 
-### Change Scope
+### Evidence Status
+
+#### PROVEN
 -
 
-### Tests / CI
+#### EXPECTED
 -
 
-### Security / Privacy
+#### ASSUMED
 -
 
-### Data / Migration
+#### UNKNOWN
 -
 
-### Config / Secrets
+### Output Produced
+
+#### Change Scope
 -
 
-### Dependencies / Supply Chain
+#### Tests / CI
 -
 
-### Observability / Monitoring
+#### Security / Privacy
 -
 
-### Rollback / Recovery
+#### Data / Migration
 -
 
-### Human Approvals Needed
+#### Config / Secrets
 -
 
-### Blockers
+#### Dependencies / Supply Chain
 -
 
-### Non-Blocking Risks
+#### Observability / Monitoring
 -
 
-### Recommended Pre-Release Checklist
+#### Rollback / Recovery
+-
+
+#### Human Approvals Needed
+-
+
+#### Blockers
+-
+
+#### Non-Blocking Risks
+-
+
+#### Recommended Pre-Release Checklist
 1.
 2.
 3.
 
-### Recommended Post-Release Checks
+#### Recommended Post-Release Checks
 1.
 2.
 3.
 
-### Recommendation
+#### Recommendation
 
 Choose one:
 
@@ -173,4 +202,86 @@ Choose one:
 - Proceed only after listed blockers are resolved
 - Proceed with human approval and stated risks
 - Ready only within the reviewed non-production scope
+
+### Verification Needed
+-
+
+### Escalation Needed?
+-
+
+### Next Role Recommendation
+-
+
+### Prompt For Next Role Or Human Decision Packet
+
+```text
+Role: [Reader / Architect / Verifier / Handoff Scribe / Human Operator decision packet]
+
+Task:
+[State the exact next task. If evidence is missing, ask Reader to gather it. If scope or risk needs replanning, ask Architect. If another readiness challenge is needed, ask Verifier. If the review should be preserved, ask Handoff Scribe. If the next step is release/deployment execution, provide a Human Operator decision packet instead of assigning AI as Operator.]
+
+Repository access:
+[Direct tool access / Pasted excerpts only / No file access / Unknown]
+
+Files already read:
+[List files read during this release check]
+
+Files you must read before acting:
+[List files, diffs, CI outputs, test outputs, release notes, migration plans, rollback plans, configs, or checklists the next role must read before making claims.]
+
+Evidence from previous role:
+PROVEN:
+- [Directly supported release-check evidence]
+
+EXPECTED:
+- [Expected but not directly observed]
+
+ASSUMED:
+- [Assumptions that must not be promoted to facts]
+
+UNKNOWN:
+- [Unknowns that remain after release check]
+
+Risk level:
+[Risk level and reason]
+
+Verification level:
+[Verification level and reviewed scope]
+
+Release recommendation:
+[One of the allowed recommendation choices, with scope]
+
+Constraints:
+[Scope limits, approvals, no-go areas, and rules]
+
+Do not:
+- Do not execute deployment.
+- Do not claim deployment happened unless deployment evidence is reviewed.
+- Do not claim CI passed unless actual CI output is reviewed.
+- Do not claim production readiness beyond reviewed evidence.
+- Do not treat this readiness review as approval to operate.
+- Do not convert assumptions, expected behavior, plans, or checklists into completed facts.
+- Do not assign AI as Operator. Operator is human-only.
+
+Required output:
+If Role is Reader, return a Reader Pass focused only on missing release evidence and include Prompt For Next Role.
+
+If Role is Architect, return an Architect Pass focused on release risk, sequencing, rollback, and no-go boundaries. Include Prompt For Next Role.
+
+If Role is Verifier, return a Verifier Pass challenging a specific release claim or evidence packet. Include Prompt For Next Role.
+
+If Role is Handoff Scribe, return an AI Handoff that separates files read, files changed or proposed, verification level, PROVEN, EXPECTED, ASSUMED, UNKNOWN, risks, next safe options, and human decisions. Include a next-session prompt.
+
+If this is a Human Operator decision packet, include:
+- Decision needed
+- Evidence reviewed
+- Evidence missing
+- Risk level
+- Blockers
+- Required approvals
+- Required backup / rollback / recovery notes
+- Dry-run or read-only checks available
+- Explicit no-go conditions
+- Post-action evidence the human should collect
 ```
+````
