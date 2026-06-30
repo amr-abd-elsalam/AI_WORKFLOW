@@ -46,6 +46,16 @@ If files overlap:
 
 ---
 
+## Which Template Should I Use?
+
+Templates are stable reusable skeletons. They are not project state.
+
+| Need | Template |
+|---|---|
+| Create local/session mutable context files without committing current state | `.ai/templates/MUTABLE_CONTEXT_TEMPLATES.md` |
+
+---
+
 ## Which Checklist Should I Use?
 
 | Situation | Checklist |
