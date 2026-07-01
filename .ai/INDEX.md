@@ -19,6 +19,18 @@ It is stable navigation, not project state.
 
 ---
 
+## First Use With a Target Repository
+
+If you are using `AI_WORKFLOW` with another software/target repository, start with `BEGIN_HERE.md`.
+
+Use `.ai/prompts/WORKFLOW_INTAKE_PROMPT.md` to produce the first copy/paste-ready `Architect` prompt.
+
+- `AI_WORKFLOW` is the workflow/governance repository.
+- The target repository is the source of truth for actual code, tests, config, scripts, diffs, and behavior.
+- The human remains the `Operator`.
+
+---
+
 ## Authority
 
 If files overlap:
