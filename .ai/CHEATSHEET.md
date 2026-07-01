@@ -201,6 +201,16 @@ Use the escalation format from `ARCHITECT_RULES.md`.
 
 ---
 
+## First Use With a Target Repository
+
+If you are using `AI_WORKFLOW` with another software/target repository, start with `BEGIN_HERE.md`.
+
+- `AI_WORKFLOW` is the workflow/governance repository.
+- The target repository is the source of truth for actual code, tests, config, scripts, diffs, and behavior.
+- `.ai/prompts/WORKFLOW_INTAKE_PROMPT.md` is a utility prompt for producing the first Architect prompt.
+
+---
+
 ## Daily Starter
 
 ```text
