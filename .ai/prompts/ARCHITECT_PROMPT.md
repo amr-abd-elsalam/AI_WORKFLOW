@@ -191,10 +191,13 @@ Build an evidence map for this task before any implementation.
 Repository access:
 [Direct tool access / Pasted excerpts only / No file access / Unknown]
 
+Files / context to send to next model:
+[List planning context, evidence needs, recommended sequence, and relevant constraints. Do not present this as source authority.]
+
 Files already read:
 [List files read by Architect in this session]
 
-Files you must read before acting:
+Files you must re-read before acting:
 [List exact files or areas identified by Architect]
 
 Evidence from previous role:

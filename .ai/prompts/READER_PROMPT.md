@@ -166,11 +166,14 @@ Task:
 Repository access:
 [Direct tool access / Pasted excerpts only / No file access / Unknown]
 
+Files / context to send to next model:
+[List evidence map, reviewed files, missing evidence, recommended next step, and relevant constraints. Do not present this as source authority.]
+
 Files already read:
 [List files read by Reader in this session]
 
-Files you must read before acting:
-[List files the next role must read before acting. If Executor is next, include every file it may edit.]
+Files you must re-read before acting:
+[List files the next role must re-read before acting. If Executor is next, include every file it may edit.]
 
 Evidence from previous role:
 PROVEN:
