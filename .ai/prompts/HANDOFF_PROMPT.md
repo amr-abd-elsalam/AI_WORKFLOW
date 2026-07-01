@@ -60,7 +60,8 @@ Separate:
 - `UNKNOWN`;
 - risks;
 - next safe options;
-- human decisions.
+- human decisions;
+- suggested human-only commands, if any.
 
 A handoff is not source authority. It is a map for the next session.
 
@@ -166,6 +167,15 @@ Handoff Scribe
 ## Human Decisions Required
 -
 
+## Suggested Human Operator Commands
+- Include only if useful after verification and human acceptance.
+- Label commands as human-only suggestions.
+- State that AI did not execute, authorize, or complete them.
+- Include preflight inspection.
+- Stage only reviewed files; do not use `git add .` as the default.
+- Make branch and remote assumptions explicit before push suggestions.
+- Exclude force push, destructive git cleanup, deployment, migration, secret rotation, production, payment, and ledger commands unless separately approved by the human.
+
 ## Verification Needed
 -
 
@@ -223,6 +233,7 @@ Do not:
 - Do not edit files before re-reading the exact current content.
 - Do not claim commits, branch state, CI, deployment, migration, test status, security correctness, privacy correctness, or production readiness unless current evidence is reviewed.
 - Do not convert plans, recommendations, assumptions, or expected behavior into completed facts.
+- Do not treat suggested human-only commands as executed, authorized, or completed actions.
 
 Required output:
 Use the required output format for the selected role.

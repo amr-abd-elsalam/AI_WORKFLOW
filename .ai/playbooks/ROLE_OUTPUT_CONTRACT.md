@@ -324,7 +324,8 @@ AI may prepare:
 - dry-run plan;
 - rollback checklist;
 - read-only inspection plan;
-- risk summary.
+- risk summary;
+- Human Operator Command Packet.
 
 AI must not execute, authorize, or claim completion of:
 
@@ -337,6 +338,20 @@ AI must not execute, authorize, or claim completion of:
 - secrets rotation;
 - destructive operations;
 - payment or ledger changes.
+
+### Human Operator Command Packet
+
+After verification and human acceptance, AI may suggest git commit or push commands only as a clearly labeled Human Operator Command Packet.
+
+The packet must state:
+
+- the human decides whether to run any command;
+- commands were not executed by AI;
+- preflight inspection should happen first;
+- staging should target reviewed files only;
+- `git add .` must not be the default recommendation;
+- branch and remote assumptions must be explicit before any push;
+- force push, destructive git cleanup, deployment, migration, secret rotation, production, payment, and ledger commands are out of scope unless separately approved by the human.
 
 If the next step is Operator-only, the `Next Role Recommendation` must say:
 

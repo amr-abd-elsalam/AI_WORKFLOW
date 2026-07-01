@@ -262,15 +262,21 @@ You must output edits only in one of these forms.
 
 ### Existing file
 
-```text
+````text
 📄 path/to/file.ext
 
 🔍 FIND:
+
+```text
 <exact current content>
+```
 
 ✏️ REPLACE:
+
+```text
 <replacement content>
 ```
+````
 
 Rules:
 

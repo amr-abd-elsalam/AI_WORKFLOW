@@ -72,6 +72,21 @@ If commands are included:
 
 If a command would require Operator authority, state that it is human-only.
 
+### Human Operator Command Packet
+
+After a patch is verified and accepted by the human, AI may provide a clearly labeled Human Operator Command Packet for possible git commit or push actions.
+
+The packet must:
+
+- state that the human decides whether to run commands;
+- state that AI did not execute, authorize, or complete the commands;
+- include preflight inspection before staging or push suggestions;
+- stage only reviewed files, not `git add .` by default;
+- make branch and remote assumptions explicit before push suggestions;
+- avoid force push, destructive git cleanup, deployment, migration, secret rotation, production, payment, and ledger commands unless separately approved by the human.
+
+A Human Operator Command Packet is a checklist or suggestion, not execution evidence.
+
 ---
 
 ## Output Patch Rules — Strict

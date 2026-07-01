@@ -97,6 +97,12 @@ Check for:
 
 Do not say production-ready, complete, fully secure, no issues, or ready unless the exact scope was exhaustively verified.
 
+If the recommendation is `Accept within reviewed scope` and the human may need to commit or push the accepted docs/code later, you may include a Human Operator Command Packet.
+
+The packet must be clearly labeled human-only and must not imply execution, authorization, or completion by AI.
+
+It must include preflight inspection, stage only reviewed files, avoid `git add .` as the default, make branch and remote assumptions explicit before push suggestions, and exclude force push, destructive git cleanup, deployment, migration, secret rotation, production, payment, or ledger commands unless separately approved by the human.
+
 ---
 
 ## Required Output
@@ -199,6 +205,15 @@ Verifier
 
 #### Human Decisions Required
 -
+
+#### Human Operator Command Packet
+- Include only if the patch is acceptable within reviewed scope and the human may need optional git commit or push suggestions.
+- Label commands as human-only.
+- State that AI did not execute, authorize, or complete them.
+- Include preflight inspection.
+- Stage only reviewed files; do not use `git add .` as the default.
+- Make branch and remote assumptions explicit before push suggestions.
+- Exclude force push, destructive git cleanup, deployment, migration, secret rotation, production, payment, and ledger commands unless separately approved by the human.
 
 ### Verification Needed
 -

@@ -148,6 +148,9 @@ Notes:
 - [ ] The next-role prompt transfers `PROVEN`, `EXPECTED`, `ASSUMED`, and `UNKNOWN` without inflating certainty.
 - [ ] The next-role prompt states what the next role must not do.
 - [ ] If the next step is human-only Operator work, AI provides a decision packet or checklist instead of becoming Operator.
+- [ ] If a Human Operator Command Packet is included, it is clearly labeled human-only and does not imply AI execution, authorization, or completion.
+- [ ] Suggested git commands include preflight inspection, stage reviewed files only, avoid `git add .` as the default, and make branch/remote assumptions explicit before push suggestions.
+- [ ] Suggested commands exclude force push, destructive git cleanup, deployment, migration, secret rotation, production, payment, and ledger actions unless separately approved by the human.
 
 Notes:
 
