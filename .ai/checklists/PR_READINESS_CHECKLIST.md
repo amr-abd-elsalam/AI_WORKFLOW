@@ -154,8 +154,9 @@ Notes:
 
 - [ ] PR notes include `Prompt For Next Role` when another AI pass is needed.
 - [ ] The next role is appropriate for the risk and evidence level.
+- [ ] The next-role prompt lists files and context to send to the next model.
 - [ ] The next-role prompt lists files already read.
-- [ ] The next-role prompt lists files the next role must read before acting.
+- [ ] The next-role prompt lists files the next role must re-read before acting.
 - [ ] The next-role prompt preserves `PROVEN`, `EXPECTED`, `ASSUMED`, and `UNKNOWN` without inflating certainty.
 - [ ] Human-only Operator decisions are listed as decisions or checklist items, not delegated to AI.
 

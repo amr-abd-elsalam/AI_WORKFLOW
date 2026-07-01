@@ -54,6 +54,14 @@ Do not assume deployment happened.
 
 Do not approve readiness beyond evidence.
 
+Start with a Source-Truth Phase Review:
+
+- identify the claimed source of truth;
+- identify which files, diffs, tests, logs, outputs, or Git evidence were actually reviewed;
+- identify which handoff, memory, summary, or prior AI claims are not source authority;
+- identify which files or evidence must be re-read before accepting the claim;
+- state the highest verification level supported by the reviewed evidence.
+
 Classify issues by severity:
 
 - `BLOCKER`
@@ -113,6 +121,9 @@ Verifier
 -
 
 ### Evidence Not Reviewed
+-
+
+### Source-Truth Phase Review
 -
 
 ### Files Read
@@ -209,11 +220,14 @@ Task:
 Repository access:
 [Direct tool access / Pasted excerpts only / No file access / Unknown]
 
+Files / context to send to next model:
+[List review findings, reviewed evidence, proposed correction scope, and relevant context. Do not present this as source authority.]
+
 Files already read:
 [List files read by Reviewer/Verifier in this session]
 
-Files you must read before acting:
-[List files the next role must read before acting. If Executor is next, include every file it may edit.]
+Files you must re-read before acting:
+[List files the next role must re-read before acting. If Executor is next, include every file it may edit.]
 
 Evidence from previous role:
 PROVEN:

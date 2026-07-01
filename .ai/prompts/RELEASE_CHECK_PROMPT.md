@@ -223,11 +223,14 @@ Task:
 Repository access:
 [Direct tool access / Pasted excerpts only / No file access / Unknown]
 
+Files / context to send to next model:
+[List release-check findings, reviewed evidence, recommendation scope, human decision packet context, and relevant constraints. Do not present this as source authority.]
+
 Files already read:
 [List files read during this release check]
 
-Files you must read before acting:
-[List files, diffs, CI outputs, test outputs, release notes, migration plans, rollback plans, configs, or checklists the next role must read before making claims.]
+Files you must re-read before acting:
+[List files, diffs, CI outputs, test outputs, release notes, migration plans, rollback plans, configs, or checklists the next role must re-read before making claims.]
 
 Evidence from previous role:
 PROVEN:

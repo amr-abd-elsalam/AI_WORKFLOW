@@ -142,8 +142,9 @@ Notes:
 
 - [ ] The output includes `Prompt For Next Role` when another AI pass is needed.
 - [ ] The next role is appropriate for the current evidence and risk.
+- [ ] The next-role prompt lists files and context to send to the next model.
 - [ ] The next-role prompt lists files already read.
-- [ ] The next-role prompt lists files the next role must read before acting.
+- [ ] The next-role prompt lists files the next role must re-read before acting.
 - [ ] The next-role prompt transfers `PROVEN`, `EXPECTED`, `ASSUMED`, and `UNKNOWN` without inflating certainty.
 - [ ] The next-role prompt states what the next role must not do.
 - [ ] If the next step is human-only Operator work, AI provides a decision packet or checklist instead of becoming Operator.
