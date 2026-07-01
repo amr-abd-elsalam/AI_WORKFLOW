@@ -10,6 +10,7 @@ It is stable navigation, not project state.
 
 | File | Purpose |
 |---|---|
+| `BEGIN_HERE.md` | First-use guide for using this workflow with an external target project repository. |
 | `ARCHITECT_RULES.md` | Stable governance rules. Highest authority in this repository workflow. |
 | `SOLO_AI_ENGINEERING_METHOD.md` | Educational method for one human working with AI. |
 | `.ai/QUICKSTART.md` | Daily compact usage guide. |
@@ -35,6 +36,7 @@ If files overlap:
 
 | Situation | Prompt |
 |---|---|
+| Turning a natural human request into the first Architect prompt | `.ai/prompts/WORKFLOW_INTAKE_PROMPT.md` |
 | Starting a session | `.ai/prompts/AI_SESSION_STARTER.md` |
 | Planning before edits | `.ai/prompts/ARCHITECT_PROMPT.md` |
 | Reading files before edits | `.ai/prompts/READER_PROMPT.md` |

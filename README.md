@@ -60,21 +60,29 @@ It is especially useful when one human wants to work with the discipline of a sm
 
 ## Start Here
 
-Read in this order:
+If you are using this workflow with another software repository, start with:
 
-1. `README.md`  
+1. `BEGIN_HERE.md`  
+   First-use guide for using `AI_WORKFLOW` with an external target project repository.
+
+2. `.ai/prompts/WORKFLOW_INTAKE_PROMPT.md`  
+   Utility prompt that turns a natural human request into the first `Architect` prompt.
+
+Then read as needed:
+
+3. `README.md`  
    High-level orientation.
 
-2. `SOLO_AI_ENGINEERING_METHOD.md`  
+4. `SOLO_AI_ENGINEERING_METHOD.md`  
    The broader method for one human working with AI.
 
-3. `ARCHITECT_RULES.md`  
+5. `ARCHITECT_RULES.md`  
    Stable governance rules for AI working inside a repository.
 
-4. `.ai/QUICKSTART.md`  
+6. `.ai/QUICKSTART.md`  
    The practical daily workflow.
 
-5. `.ai/INDEX.md`  
+7. `.ai/INDEX.md`  
    Map of prompts, playbooks, and checklists.
 
 ---
@@ -83,6 +91,7 @@ Read in this order:
 
 ```text
 ARCHITECT_RULES.md
+BEGIN_HERE.md
 SOLO_AI_ENGINEERING_METHOD.md
 
 .ai/
@@ -102,6 +111,7 @@ SOLO_AI_ENGINEERING_METHOD.md
     VERIFICATION_LADDER.md
 
   prompts/
+    WORKFLOW_INTAKE_PROMPT.md
     AI_SESSION_STARTER.md
     ARCHITECT_PROMPT.md
     READER_PROMPT.md
