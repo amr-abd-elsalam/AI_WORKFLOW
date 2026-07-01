@@ -101,7 +101,11 @@ Each role must produce only the artifact allowed for that role.
 
 ### Next-Role Prompt Packet
 
-Every role output must include a prompt for the next role unless the correct next step is escalation or human-only operation.
+Every role output must include a next-model transfer packet for the next role unless the correct next step is escalation or human-only operation.
+
+The transfer packet must reduce ambiguity without becoming source authority.
+
+It tells the next model what was reviewed, what must be re-read, what evidence was used, what remains assumed or unknown, and what boundaries must not be crossed.
 
 The prompt must be directly usable by another AI model.
 
@@ -110,8 +114,9 @@ It must include:
 - next role;
 - task;
 - repository access mode;
+- files and context to send to the next model;
 - files already read;
-- files the next role must read before acting;
+- files the next role must re-read before acting;
 - evidence from the previous role;
 - risk level;
 - constraints;

@@ -84,6 +84,21 @@ Before relying on mutable context:
 - treat prior AI claims as `ASSUMED`;
 - mark stale information clearly.
 
+## Canonical Mutable Context Sequence
+
+Use this sequence whenever mutable context is present:
+
+1. Read stable rules and role instructions first.
+2. Read the mutable context file as a map, not as proof.
+3. Classify mutable claims as `ASSUMED` until revalidated.
+4. Re-read the current repository files relevant to the task.
+5. Re-check diffs, tests, logs, or Git evidence when they are material to the claim.
+6. Promote only directly verified claims to `PROVEN`.
+7. Keep stale, missing, or unverified claims in `ASSUMED` or `UNKNOWN`.
+8. Only then plan, patch, verify, or hand off.
+
+A next-model transfer packet may include mutable context, but it must also say which parts must be re-read before acting.
+
 ---
 
 ## Suggested Header for Mutable Files

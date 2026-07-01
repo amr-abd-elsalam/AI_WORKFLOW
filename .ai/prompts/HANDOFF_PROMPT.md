@@ -64,6 +64,15 @@ Separate:
 
 A handoff is not source authority. It is a map for the next session.
 
+The `Prompt For Next Role` is a next-model transfer packet, not proof.
+
+It must clearly separate:
+
+- files and context to send to the next model;
+- files the next model must re-read before acting;
+- facts proven in this session;
+- assumptions and unknowns that must not be promoted without evidence.
+
 ---
 
 ## Required Output
@@ -96,6 +105,9 @@ Handoff Scribe
 -
 
 ## Files Not Read But Needed
+-
+
+## Files / Context To Send To Next Model
 -
 
 ## Files Changed or Proposed
@@ -174,11 +186,14 @@ Task:
 Repository access:
 [Direct tool access / Pasted excerpts only / No file access / Unknown]
 
+Files / context to send to next model:
+[List handoff context, proposed patches, reviewed evidence, and relevant mutable context. Do not present this as source authority.]
+
 Files already read:
 [List files read in the previous session. Treat them as needing re-read if freshness matters.]
 
-Files you must read before acting:
-[List exact files the next role must read before making claims, plans, patches, reviews, or handoffs.]
+Files you must re-read before acting:
+[List exact files the next role must re-read before making claims, plans, patches, reviews, or handoffs.]
 
 Evidence from previous role:
 PROVEN:

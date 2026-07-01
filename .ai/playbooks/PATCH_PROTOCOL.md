@@ -59,6 +59,21 @@ Rollback/reversal:
 
 ---
 
+## Command Boundary
+
+Patch proposals may include suggested verification commands, but commands are not proof.
+
+If commands are included:
+
+- label them as human Operator actions or read-only inspection suggestions;
+- do not imply the AI executed them;
+- do not claim command output unless the output was actually provided and reviewed;
+- do not include commits, merges, pushes, deployments, migrations, secrets rotation, destructive operations, production operations, or payment/ledger actions as AI-executed steps.
+
+If a command would require Operator authority, state that it is human-only.
+
+---
+
 ## Output Patch Rules — Strict
 
 You must output edits only in one of these forms.

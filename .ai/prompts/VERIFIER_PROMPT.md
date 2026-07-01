@@ -50,6 +50,14 @@ Do not produce a replacement patch unless explicitly asked after verification.
 
 Challenge the claim.
 
+Start with a Source-Truth Phase Review:
+
+- identify the claimed source of truth;
+- identify which files, diffs, tests, logs, outputs, or Git evidence were actually reviewed;
+- identify which handoff, memory, summary, or prior AI claims are not source authority;
+- identify which files or evidence must be re-read before accepting the claim;
+- state the highest verification level supported by the reviewed evidence.
+
 Classify evidence as:
 
 - `PROVEN`
@@ -121,6 +129,9 @@ Verifier
 -
 
 ### Evidence Not Reviewed
+-
+
+### Source-Truth Phase Review
 -
 
 ### Files Read

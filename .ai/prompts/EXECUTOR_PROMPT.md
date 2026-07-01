@@ -59,6 +59,13 @@ Declare deletions explicitly.
 
 Do not edit files not read in this session.
 
+Command boundary:
+
+- You may suggest commands only as human Operator actions or read-only inspection suggestions.
+- Do not make commands appear executed.
+- Do not claim command output, tests, diffs, CI, branch status, commits, pushes, deployments, migrations, or production state unless evidence is provided and reviewed.
+- Do not include commits, merges, pushes, deployments, migrations, secrets rotation, destructive operations, production operations, or payment/ledger actions as AI-executed steps.
+
 Do not add:
 
 - hidden runtime activation;

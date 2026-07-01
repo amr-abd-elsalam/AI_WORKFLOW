@@ -14,6 +14,8 @@ Do not treat these templates, or any copied mutable context, as source authority
 
 Before relying on mutable context, revalidate against current repository files, diffs, tests, and Git evidence.
 
+Use the canonical mutable context sequence from `.ai/playbooks/CONTEXT_MANAGEMENT.md` before promoting mutable claims to `PROVEN`.
+
 Do not commit filled mutable context files unless the human explicitly accepts the stale-state risk.
 
 Never store secrets, private keys, access tokens, production credentials, private user data, production dumps, or sensitive incident details in mutable context.
@@ -195,6 +197,10 @@ Scope:
 -
 
 ## Files Changed or Proposed
+
+-
+
+## Files / Context To Send To Next Model
 
 -
 
