@@ -152,6 +152,9 @@ Prompts may adapt it, but must preserve the same information.
 ### Files Not Read But Needed
 -
 
+### Files / Context To Send To Next Model
+-
+
 ### Evidence Status
 
 #### PROVEN
@@ -195,10 +198,13 @@ Task:
 Repository access:
 [...]
 
+Files / context to send to next model:
+[...]
+
 Files already read:
 [...]
 
-Files you must read before acting:
+Files you must re-read before acting:
 [...]
 
 Evidence from previous role:

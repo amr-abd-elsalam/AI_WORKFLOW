@@ -186,10 +186,13 @@ Challenge the proposed patch and claims before acceptance.
 Repository access:
 [Direct tool access / Pasted excerpts only / No file access / Unknown]
 
+Files / context to send to next model:
+[List the proposed patch, reviewed evidence, and relevant context. Do not present this as source authority.]
+
 Files already read:
 [List files read by Executor in this session]
 
-Files you must read before acting:
+Files you must re-read before acting:
 [List every file touched by the patch. Include relevant tests, configs, scripts, migrations, or docs needed to verify the claim.]
 
 Evidence from previous role:

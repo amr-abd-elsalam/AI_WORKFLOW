@@ -220,11 +220,14 @@ Task:
 Repository access:
 [Direct tool access / Pasted excerpts only / No file access / Unknown]
 
+Files / context to send to next model:
+[List verification findings, reviewed evidence, proposed correction scope, and relevant context. Do not present this as source authority.]
+
 Files already read:
 [List files read by Verifier in this session]
 
-Files you must read before acting:
-[List files the next role must read before acting. If Executor is next, include every file it may edit.]
+Files you must re-read before acting:
+[List files the next role must re-read before acting. If Executor is next, include every file it may edit.]
 
 Evidence from previous role:
 PROVEN:
