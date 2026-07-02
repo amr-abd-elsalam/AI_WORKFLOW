@@ -65,6 +65,13 @@ Command boundary:
 - Do not make commands appear executed.
 - Do not claim command output, tests, diffs, CI, branch status, commits, pushes, deployments, migrations, or production state unless evidence is provided and reviewed.
 - Do not include commits, merges, pushes, deployments, migrations, secrets rotation, destructive operations, production operations, or payment/ledger actions as AI-executed steps.
+- If the output includes `FIND/REPLACE`, `NEW FILE`, or `DELETE` patch blocks, include a draft `Proposed Human Operator Command Packet` for Verifier review.
+- The draft command packet is not approval, authorization, or execution.
+- The draft command packet must say it is for use only after Verifier review and human acceptance.
+- Include preflight inspection commands before staging, commit, or push suggestions.
+- Stage only reviewed/touched files. Do not use `git add .` as the default.
+- Make branch and remote assumptions explicit before any push suggestion. Use placeholders such as `<remote>` and `<branch>` when unknown.
+- Do not include force push, destructive cleanup, deployment, migration, secrets, production, payment, or ledger commands unless separately approved by the human under the appropriate risk process.
 
 Do not add:
 
@@ -160,6 +167,30 @@ Executor
 
 [Use only the formats in `Output Patch Rules — Strict`. Existing-file `FIND` blocks must match current file content exactly. If exact `FIND` cannot be guaranteed, output the unsafe/context-needed form instead of guessing.]
 
+### Proposed Human Operator Command Packet
+
+[If this output includes `FIND/REPLACE`, `NEW FILE`, or `DELETE` patch blocks, include a draft command packet for Verifier review. If no patch is proposed, write `Not applicable.`]
+
+This packet is for human Operator use only after Verifier review and human acceptance.
+
+The human decides whether to run any command.
+
+AI did not execute these commands.
+
+AI does not claim staging, commit, push, branch status, remote status, or command output.
+
+Use reviewed/touched paths only. Do not use `git add .` as the default.
+
+If branch or remote is unknown, use placeholders and state the assumption.
+
+```bash
+git status --short
+git --no-pager diff
+git add <reviewed-file-1> [<reviewed-file-2>]
+git commit -m "<commit-message>"
+git push <remote> <branch>
+```
+
 ### Suggested Verification
 -
 
@@ -227,6 +258,9 @@ Patch category:
 Patch to verify:
 [Paste the exact proposed patch, including FIND/REPLACE, NEW FILE, or DELETE blocks]
 
+Proposed Human Operator Command Packet to verify:
+[Paste the proposed command packet. If no command packet was proposed, say why.]
+
 Constraints:
 [Scope limits and rules]
 
@@ -234,6 +268,8 @@ Do not:
 - Do not modify code.
 - Do not produce a replacement patch unless explicitly asked after verification.
 - Do not approve this patch based on Executor confidence.
+- Do not run proposed Human Operator commands.
+- Do not claim staging, commit, push, branch status, remote status, or command output unless actual command output is reviewed.
 - Do not claim tests passed unless actual test output is reviewed.
 - Do not claim production readiness, deployment status, migration status, security correctness, privacy correctness, or financial correctness without evidence.
 - Do not generalize beyond the files, diff, tests, and outputs reviewed.
