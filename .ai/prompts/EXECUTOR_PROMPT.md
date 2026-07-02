@@ -308,7 +308,6 @@ You must output edits only in one of these forms.
 
 ### Existing file
 
-````text
 📄 path/to/file.ext
 
 🔍 FIND:
@@ -322,7 +321,6 @@ You must output edits only in one of these forms.
 ```text
 <replacement content>
 ```
-````
 
 Rules:
 
@@ -337,15 +335,15 @@ Rules:
 
 ### New file
 
-````text
 📄 path/to/new-file.ext
 
 ```text
 <full file content>
 ```
-````
 
+```text
 Use the appropriate language fence for the new file when known, such as `md`, `js`, `ts`, `py`, `json`, `yaml`, or `text`.
+```
 
 ### Unsafe / not enough context
 
