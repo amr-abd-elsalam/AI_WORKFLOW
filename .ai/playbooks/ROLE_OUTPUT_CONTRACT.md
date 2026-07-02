@@ -29,7 +29,7 @@ If a role cannot safely recommend a next role, it must say why and escalate inst
 
 ## Contract Requirements
 
-Every non-trivial role output should include these packets.
+Every non-trivial role output must include these packets.
 
 For L0/L1 work, the packet may be compact.
 
@@ -81,7 +81,7 @@ Must include:
 
 ### Repository Context Packet
 
-Every `Prompt For Next Role` must explicitly include a named `Repository Context Packet`.
+Every `NEXT_ROLE_PROMPT` must explicitly include a named `Repository Context Packet`.
 
 It must include:
 
@@ -118,7 +118,15 @@ Each role must produce only the artifact allowed for that role.
 
 ### Next-Role Prompt Packet
 
-Every role output must include a next-model transfer packet for the next role unless the correct next step is escalation or human-only operation.
+Every non-trivial role output must end with a canonical `NEXT_ROLE_PROMPT` artifact.
+
+Missing `NEXT_ROLE_PROMPT` makes the role output incomplete.
+
+The `NEXT_ROLE_PROMPT` artifact must be the final section of the role output.
+
+The artifact must contain a copy/paste-ready fenced `text` prompt for the next role unless the correct next step is escalation or human-only Operator work.
+
+If escalation or human-only Operator work applies, the final `NEXT_ROLE_PROMPT` section must still be present and must contain `NOT APPLICABLE` plus the reason.
 
 The transfer packet must reduce ambiguity without becoming source authority.
 
@@ -205,7 +213,7 @@ Prompts may adapt it, but must preserve the same information.
 ### Next Role Recommendation
 -
 
-### Prompt For Next Role
+### NEXT_ROLE_PROMPT
 
 ```text
 Role: [Next Role]
@@ -217,7 +225,7 @@ Repository Context Packet:
 - Workflow repository URL: [...]
 - Target repository URL: [...]
 - Original human problem statement: [...]
-- Language preference: [...]
+- Language preference: [language preference or UNKNOWN. For Arabic preference, use: Arabic prose. Keep filenames, commands, role names, and technical terms in English.]
 - Repository access mode: [...]
 - Risk level: [...]
 - Constraints: [...]
@@ -387,7 +395,7 @@ If the next step is Operator-only, the `Next Role Recommendation` must say:
 Human Operator only
 ```
 
-The `Prompt For Next Role` should be replaced with a human decision packet or checklist.
+The final `NEXT_ROLE_PROMPT` section must contain `NOT APPLICABLE` plus the reason, followed by any human decision packet or checklist.
 
 ---
 

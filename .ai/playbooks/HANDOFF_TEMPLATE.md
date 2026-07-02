@@ -6,7 +6,7 @@ This is a template, not project state.
 
 ---
 
-```md
+````md
 # AI Handoff
 
 ## Task Goal
@@ -96,4 +96,28 @@ This is a template, not project state.
 - Prior AI claims are not source authority.
 - Re-read relevant files before editing.
 - Re-check diffs and tests before claiming status.
+
+## NEXT_ROLE_PROMPT
+
+Include either a copy/paste-ready fenced `text` prompt for the next role, or `NOT APPLICABLE` plus the reason.
+
+```text
+Role: [Next Role]
+
+Task:
+[...]
+
+Repository Context Packet:
+- Workflow repository URL: [...]
+- Target repository URL: [...]
+- Original human problem statement: [...]
+- Language preference: [language preference or UNKNOWN. For Arabic preference, use: Arabic prose. Keep filenames, commands, role names, and technical terms in English.]
+- Repository access mode: [...]
+- Risk level: [...]
+- Constraints: [...]
+- Evidence status: [Summarize; preserve PROVEN, EXPECTED, ASSUMED, UNKNOWN below]
+
+Required output:
+[exact required output format]
 ```
+````
