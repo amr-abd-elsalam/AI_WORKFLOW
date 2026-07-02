@@ -183,6 +183,16 @@ Role: Verifier
 Task:
 Challenge the proposed patch and claims before acceptance.
 
+Repository Context Packet:
+- Workflow repository URL: [workflow repository URL or UNKNOWN]
+- Target repository URL: [target repository URL or UNKNOWN]
+- Original human problem statement: [original human problem statement or UNKNOWN]
+- Language preference: [language preference or UNKNOWN]
+- Repository access mode: [Direct tool access / Pasted excerpts only / No file access / Unknown]
+- Risk level: [risk level and reason]
+- Constraints: [scope limits and rules]
+- Evidence status: [Summarize; preserve PROVEN, EXPECTED, ASSUMED, UNKNOWN below]
+
 Repository access:
 [Direct tool access / Pasted excerpts only / No file access / Unknown]
 

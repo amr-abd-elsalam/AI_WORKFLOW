@@ -79,6 +79,23 @@ Must include:
 - files the next role must read before acting;
 - whether file access was direct or based on pasted excerpts.
 
+### Repository Context Packet
+
+Every `Prompt For Next Role` must explicitly include a named `Repository Context Packet`.
+
+It must include:
+
+- Workflow repository URL;
+- Target repository URL;
+- Original human problem statement;
+- Language preference;
+- Repository access mode;
+- Risk level;
+- Constraints;
+- Evidence status.
+
+If a field is unknown, write `UNKNOWN` instead of omitting it.
+
 Repository access mode must be one of:
 
 - `Direct tool access`
@@ -113,6 +130,7 @@ It must include:
 
 - next role;
 - task;
+- named `Repository Context Packet`;
 - repository access mode;
 - files and context to send to the next model;
 - files already read;
@@ -194,6 +212,16 @@ Role: [Next Role]
 
 Task:
 [...]
+
+Repository Context Packet:
+- Workflow repository URL: [...]
+- Target repository URL: [...]
+- Original human problem statement: [...]
+- Language preference: [...]
+- Repository access mode: [...]
+- Risk level: [...]
+- Constraints: [...]
+- Evidence status: [Summarize; preserve PROVEN, EXPECTED, ASSUMED, UNKNOWN below]
 
 Repository access:
 [...]

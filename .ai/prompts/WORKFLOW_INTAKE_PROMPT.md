@@ -158,6 +158,9 @@ Human problem statement:
 Language preference:
 [language preference or UNKNOWN]
 
+Repository access mode:
+[Direct tool access / Pasted excerpts only / No file access / Unknown]
+
 Known context:
 [known context or UNKNOWN. Treat as ASSUMED until verified.]
 
@@ -186,14 +189,15 @@ Required Architect behavior:
 - Identify false-confidence traps.
 - Recommend the smallest safe next step.
 - Recommend the next role, usually `Reader`.
-- Produce a `Prompt For Next Role` that carries forward:
-  - workflow repository URL;
-  - target repository URL;
-  - human problem statement;
-  - language preference;
-  - risk level;
-  - constraints;
-  - evidence status using `PROVEN`, `EXPECTED`, `ASSUMED`, and `UNKNOWN`.
+- Produce a `Prompt For Next Role` that includes a named `Repository Context Packet` carrying forward:
+  - Workflow repository URL;
+  - Target repository URL;
+  - Original human problem statement;
+  - Language preference;
+  - Repository access mode;
+  - Risk level;
+  - Constraints;
+  - Evidence status using `PROVEN`, `EXPECTED`, `ASSUMED`, and `UNKNOWN`.
 
 Required output:
 Return an `Architect Pass` with:

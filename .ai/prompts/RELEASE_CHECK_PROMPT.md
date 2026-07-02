@@ -220,6 +220,16 @@ Role: [Reader / Architect / Verifier / Handoff Scribe / Human Operator decision 
 Task:
 [State the exact next task. If evidence is missing, ask Reader to gather it. If scope or risk needs replanning, ask Architect. If another readiness challenge is needed, ask Verifier. If the review should be preserved, ask Handoff Scribe. If the next step is release/deployment execution, provide a Human Operator decision packet instead of assigning AI as Operator.]
 
+Repository Context Packet:
+- Workflow repository URL: [workflow repository URL or UNKNOWN]
+- Target repository URL: [target repository URL or UNKNOWN]
+- Original human problem statement: [original human problem statement or UNKNOWN]
+- Language preference: [language preference or UNKNOWN]
+- Repository access mode: [Direct tool access / Pasted excerpts only / No file access / Unknown]
+- Risk level: [risk level and reason]
+- Constraints: [scope limits and rules]
+- Evidence status: [Summarize; preserve PROVEN, EXPECTED, ASSUMED, UNKNOWN below]
+
 Repository access:
 [Direct tool access / Pasted excerpts only / No file access / Unknown]
 

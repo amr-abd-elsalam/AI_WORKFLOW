@@ -232,6 +232,16 @@ Role: [Executor / Reader / Architect / Handoff Scribe]
 Task:
 [State the exact next task. If findings require changes, ask Executor for a minimal correction patch. If evidence is missing, ask Reader to gather the missing evidence. If the plan needs reshaping, ask Architect. If acceptable within reviewed scope, ask Handoff Scribe to record an accurate handoff.]
 
+Repository Context Packet:
+- Workflow repository URL: [workflow repository URL or UNKNOWN]
+- Target repository URL: [target repository URL or UNKNOWN]
+- Original human problem statement: [original human problem statement or UNKNOWN]
+- Language preference: [language preference or UNKNOWN]
+- Repository access mode: [Direct tool access / Pasted excerpts only / No file access / Unknown]
+- Risk level: [risk level and reason]
+- Constraints: [scope limits and rules]
+- Evidence status: [Summarize; preserve PROVEN, EXPECTED, ASSUMED, UNKNOWN below]
+
 Repository access:
 [Direct tool access / Pasted excerpts only / No file access / Unknown]
 
