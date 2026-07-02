@@ -46,6 +46,8 @@ Mutable context is advisory. It must be revalidated against current repository e
 
 ### Repository Workflow Authority
 
+If the current session begins with a target-repository intake scenario (a target project repository URL together with this workflow repository URL, a problem statement, and a language preference), `BEGIN_HERE.md` and its "Automatic Intake Dispatch Rule" govern first, before any other file in this list is applied to the target repository.
+
 When workflow files overlap, use this authority order:
 
 1. `ARCHITECT_RULES.md`

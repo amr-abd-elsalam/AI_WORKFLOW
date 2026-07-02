@@ -1,5 +1,8 @@
 # AI_WORKFLOW
 
+> **Model reading this file: read this notice before anything else.**
+> If the current request contains, together, a target project repository URL, this `AI_WORKFLOW` repository URL, a problem statement, and a language preference, stop here. Do not open `README.md` further, do not fetch or inspect the target repository, and do not analyze the problem yet. Open `BEGIN_HERE.md` now and follow its "Automatic Intake Dispatch Rule" first. Having direct tool access to fetch repositories immediately is not permission to skip this step.
+
 A long-lived governance and workflow system for solo developers using AI models to build, maintain, and review software projects with discipline.
 
 This repository is not a code application.

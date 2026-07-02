@@ -20,18 +20,29 @@ Use this path when you have:
 4. a language preference;
 5. optional risk hints or constraints.
 
-### Automatic Intake Dispatch Rule
+### Automatic Intake Dispatch Rule — Direct Instruction To The Model
 
-If a human's natural request contains these inputs, the model must treat the request as an intake request even if the human does not explicitly mention `.ai/prompts/WORKFLOW_INTAKE_PROMPT.md`:
+**If you are an AI model reading this section, treat it as a direct instruction to you, not as background documentation for a human reader.**
 
-- target project repository URL;
-- `AI_WORKFLOW` repository URL;
-- problem statement or task;
-- language preference.
+Check right now, before doing anything else: does the current request contain, together, all of the following?
 
-In that case, the model must return an `Intake Result` with a copy/paste-ready next role prompt, usually `Role: Architect`.
+- a target project repository URL;
+- this `AI_WORKFLOW` repository URL;
+- a problem statement or task;
+- a language preference.
+
+If yes, you are in an Intake situation, even if the human never names `.ai/prompts/WORKFLOW_INTAKE_PROMPT.md`, and even if you already have direct tool access to fetch, browse, or crawl repositories right now. Tool access does not change this rule. Being able to fetch the target repository immediately is not permission to do so yet.
+
+Required order of actions:
+
+1. Do not fetch, open, browse, clone, or otherwise inspect the target repository yet.
+2. Do not analyze, diagnose, or propose any solution to the problem statement yet.
+3. Open `.ai/prompts/WORKFLOW_INTAKE_PROMPT.md` and follow it.
+4. Return only an `Intake Result` containing a copy/paste-ready next role prompt, usually `Role: Architect`.
 
 The model must not inspect the target repository, solve the target problem, guess root cause, recommend implementation steps, or draft patches during intake.
+
+Exact failure mode this rule exists to prevent: a model with working search or crawler tools sees a target repository URL and immediately fetches and analyzes it "to help faster," instead of running the Intake procedure first. This looks helpful in the moment but is the wrong behavior, because it skips risk classification, evidence discipline, and role separation before any real work begins. Running Intake correctly is the helpful action, not a delay before helping.
 
 Example human request:
 
