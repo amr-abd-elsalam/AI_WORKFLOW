@@ -39,6 +39,29 @@ Before making claims, plans, patches, reviews, or handoffs:
 
 ---
 
+## Automatic Intake Dispatch Trigger
+
+If the human provides all of the following in a natural request:
+
+- a target project repository URL;
+- the `AI_WORKFLOW` repository URL;
+- a problem statement or task;
+- a language preference;
+
+then treat the request as an intake request automatically, even if `Role requested` is `Unsure` or the human did not explicitly paste `.ai/prompts/WORKFLOW_INTAKE_PROMPT.md`.
+
+When this trigger matches:
+
+- do not inspect the target repository;
+- do not solve the target project problem;
+- do not guess root cause;
+- do not recommend implementation steps or patches;
+- return an `Intake Result` with a copy/paste-ready next role prompt, usually `Role: Architect`;
+- carry the language preference forward in the generated prompt;
+- include a named `Repository Context Packet` in the generated next role prompt.
+
+---
+
 ## Current Session Request
 
 Role requested:
@@ -81,7 +104,11 @@ Constraints:
 
 ## Required First Response
 
-Start with:
+If the `Automatic Intake Dispatch Trigger` matched, do not use the `Session Setup` format.
+
+Return an `Intake Result` with a copy/paste-ready next role prompt instead.
+
+Otherwise, start with:
 
 ```md
 ## Session Setup

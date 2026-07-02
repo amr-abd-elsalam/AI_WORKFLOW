@@ -20,6 +20,19 @@ Use this path when you have:
 4. a language preference;
 5. optional risk hints or constraints.
 
+### Automatic Intake Dispatch Rule
+
+If a human's natural request contains these inputs, the model must treat the request as an intake request even if the human does not explicitly mention `.ai/prompts/WORKFLOW_INTAKE_PROMPT.md`:
+
+- target project repository URL;
+- `AI_WORKFLOW` repository URL;
+- problem statement or task;
+- language preference.
+
+In that case, the model must return an `Intake Result` with a copy/paste-ready next role prompt, usually `Role: Architect`.
+
+The model must not inspect the target repository, solve the target problem, guess root cause, recommend implementation steps, or draft patches during intake.
+
 Example human request:
 
 ```text

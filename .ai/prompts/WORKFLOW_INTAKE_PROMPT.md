@@ -18,6 +18,23 @@ It must not guess root cause.
 
 ---
 
+## Automatic Intake Trigger
+
+Use this intake behavior automatically when a human's natural request includes:
+
+- a target project repository URL;
+- the `AI_WORKFLOW` repository URL;
+- a problem statement or task;
+- a language preference.
+
+This applies even if the human does not explicitly say to use this file.
+
+When this trigger matches, return an `Intake Result` with a copy/paste-ready next role prompt, usually `Role: Architect`.
+
+Do not inspect the target repository, solve the target problem, guess root cause, recommend implementation steps, or draft patches during intake.
+
+---
+
 ## Intake Prompt
 
 You are helping a human start an `AI_WORKFLOW` session.
@@ -146,26 +163,14 @@ Role: Architect
 Task:
 Plan the smallest safe workflow for the human's request before any implementation.
 
-Workflow repository:
-[workflow repository URL or UNKNOWN]
-
-Target repository:
-[target repository URL]
-
-Human problem statement:
-[human problem statement exactly or minimally normalized]
-
-Language preference:
-[language preference or UNKNOWN]
-
-Repository access mode:
-[Direct tool access / Pasted excerpts only / No file access / Unknown]
-
-Known context:
-[known context or UNKNOWN. Treat as ASSUMED until verified.]
-
-Risk hints:
-[risk hints or UNKNOWN]
+Repository Context Packet:
+- Workflow repository URL: [workflow repository URL or UNKNOWN]
+- Target repository URL: [target repository URL]
+- Original human problem statement: [human problem statement exactly or minimally normalized]
+- Language preference: [language preference or UNKNOWN]
+- Repository access mode: [Direct tool access / Pasted excerpts only / No file access / Unknown]
+- Known context: [known context or UNKNOWN. Treat as ASSUMED until verified.]
+- Risk hints: [risk hints or UNKNOWN]
 
 Constraints:
 - Follow the workflow repository for governance, prompts, playbooks, role boundaries, evidence discipline, and patch discipline.
