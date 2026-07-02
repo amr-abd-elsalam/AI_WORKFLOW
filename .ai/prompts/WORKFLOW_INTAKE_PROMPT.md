@@ -29,7 +29,11 @@ Use this intake behavior automatically when a human's natural request includes:
 
 This applies even if the human does not explicitly say to use this file.
 
-When this trigger matches, return an `Intake Result` with a copy/paste-ready next role prompt, usually `Role: Architect`.
+Before opening, fetching, browsing, cloning, or otherwise inspecting any target repository URL or target project file, check this trigger first.
+
+Intake validation only requires the human-provided request fields. It does not require reading target repository files.
+
+When this trigger matches, stop normal flow and return only an `Intake Result` with a copy/paste-ready next role prompt, usually `Role: Architect`.
 
 Do not inspect the target repository, solve the target problem, guess root cause, recommend implementation steps, or draft patches during intake.
 

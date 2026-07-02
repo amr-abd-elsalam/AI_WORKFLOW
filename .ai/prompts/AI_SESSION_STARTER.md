@@ -50,7 +50,11 @@ If the human provides all of the following in a natural request:
 
 then treat the request as an intake request automatically, even if `Role requested` is `Unsure` or the human did not explicitly paste `.ai/prompts/WORKFLOW_INTAKE_PROMPT.md`.
 
-When this trigger matches:
+Before opening, fetching, browsing, cloning, or otherwise inspecting any target repository URL or target project file, check this trigger first.
+
+Intake validation only requires the human-provided request fields. It does not require reading target repository files.
+
+When this trigger matches, stop normal flow and return only an `Intake Result`:
 
 - do not inspect the target repository;
 - do not solve the target project problem;
