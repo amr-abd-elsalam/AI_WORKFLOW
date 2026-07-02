@@ -341,9 +341,7 @@ Rules:
 <full file content>
 ```
 
-```text
 Use the appropriate language fence for the new file when known, such as `md`, `js`, `ts`, `py`, `json`, `yaml`, or `text`.
-```
 
 ### Unsafe / not enough context
 
