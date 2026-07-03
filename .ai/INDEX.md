@@ -81,6 +81,7 @@ Templates are stable reusable skeletons. They are not project state.
 | Reviewing release readiness | `.ai/checklists/RELEASE_READINESS_CHECKLIST.md` |
 | Reviewing an AI product feature | `.ai/checklists/AI_FEATURE_REVIEW_CHECKLIST.md` |
 | Periodic project maintenance | `.ai/checklists/WEEKLY_MAINTENANCE_CHECKLIST.md` |
+| Retesting intake/bootstrap reliability across multiple models | `.ai/checklists/INTAKE_ROBUSTNESS_CHECKLIST.md` |
 
 ---
 
@@ -99,6 +100,7 @@ Use `.ai/playbooks/ROLE_OUTPUT_CONTRACT.md` when the goal is to make each role o
 | Handle secrets/privacy safely | `.ai/playbooks/SECURITY_SECRETS_PRIVACY.md` |
 | Govern AI inside the product | `.ai/playbooks/AI_IN_PRODUCT_GOVERNANCE.md` |
 | Write handoffs | `.ai/playbooks/HANDOFF_TEMPLATE.md` |
+| Understand the bootstrap trust boundary between human authorization and repository content | `.ai/playbooks/BOOTSTRAP_TRUST_BOUNDARY.md` |
 
 ---
 
