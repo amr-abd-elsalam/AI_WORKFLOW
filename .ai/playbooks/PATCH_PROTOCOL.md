@@ -87,6 +87,34 @@ The packet must:
 
 A Human Operator Command Packet is a checklist or suggestion, not execution evidence.
 
+### Git Metadata Suggestions
+
+For patches that are likely to be accepted, Executor may include suggested git metadata as a planning aid.
+
+Suggested git metadata may include:
+
+- branch name;
+- commit message;
+- PR title;
+- PR body outline;
+- verification checklist.
+
+Executor must label this as suggested metadata, not execution.
+
+Executor must not claim that a commit, push, PR, merge, or deployment happened.
+
+Verifier may refine the suggested git metadata after verification.
+
+If verification is only `Patch-text verification`, git metadata must remain draft-only.
+
+If verification is `Applied-diff verification` and the provided evidence supports acceptance within scope, Verifier may include a Human Operator Command Packet with:
+
+- preflight inspection commands;
+- staging commands for reviewed files only;
+- proposed commit message;
+- proposed push command with explicit branch/remote assumptions;
+- proposed PR title/body.
+
 ---
 
 ## Output Patch Rules — Strict
