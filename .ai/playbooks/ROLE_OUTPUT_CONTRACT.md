@@ -413,3 +413,29 @@ If evidence is incomplete, the role should do one of:
 Do not stop with vague caution.
 
 Convert uncertainty into a clear next action.
+
+### Progression Rule
+
+Avoid circular verification loops.
+
+A Verifier pass must end with one of these concrete outcomes:
+
+1. request a specific missing file, diff, log, or command output;
+2. hand off to Executor for a clearly scoped correction;
+3. provide a Human Operator Command Packet when the patch is accepted within reviewed scope;
+4. hand off to Handoff Scribe when the work should be recorded;
+5. escalate with a specific blocker and reason.
+
+A Verifier must not repeatedly ask for another Verifier pass over the same evidence.
+
+If applied evidence is provided, use `Applied-diff verification`.
+
+If only proposed patch text is provided, use `Patch-text verification`.
+
+Every handoff must move the work forward to either:
+
+- a smaller correction;
+- stronger evidence;
+- human execution;
+- handoff recording;
+- or explicit escalation.

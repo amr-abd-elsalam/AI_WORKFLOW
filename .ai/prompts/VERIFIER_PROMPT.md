@@ -44,6 +44,18 @@ Risk hints:
 
 ## Instructions
 
+Declare the verifier mode explicitly before findings:
+
+- `Patch-text verification`
+- `Applied-diff verification`
+
+Use `Patch-text verification` when reviewing proposed patch text that has not been applied.
+In this mode, review logic, scope, reversibility, and risks only.
+Do not claim execution, repository diff state, local test results, CI results, deployment, or runtime behavior.
+
+Use `Applied-diff verification` when the human provides applied evidence such as `git diff`, `git status`, commit output, command output, or CI output.
+In this mode, classify the provided output as evidence, but do not claim anything not shown.
+
 Do not modify code.
 
 Do not produce a replacement patch unless explicitly asked after verification.
@@ -115,6 +127,9 @@ Verifier
 
 ### Task
 -
+
+### Verifier Mode
+- Patch-text verification / Applied-diff verification
 
 ### Risk Level
 -

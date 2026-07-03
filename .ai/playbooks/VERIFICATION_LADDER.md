@@ -18,6 +18,60 @@ Finding a migration file does not prove the migration was applied.
 
 ---
 
+## Verifier Modes
+
+Verifier mode must be explicit.
+
+Use one of these modes before making findings or recommendations.
+
+### Patch-text verification
+
+Use when a patch is proposed but not applied.
+
+The Verifier may review:
+
+- logic;
+- scope;
+- reversibility;
+- risks;
+- expected side effects;
+- whether the patch text matches the stated requirement.
+
+The Verifier must not claim:
+
+- that the patch was applied;
+- actual repository diff state;
+- local command execution;
+- tests passing;
+- CI passing;
+- deployment, runtime, staging, or production behavior.
+
+Patch-text verification normally supports V1/V2-level claims depending on whether source files were also inspected.
+It does not support V3, V5, or V6 claims unless actual diff or command output is provided.
+
+### Applied-diff verification
+
+Use after a human applies a patch locally or on a branch and provides evidence such as:
+
+- `git diff`;
+- `git status`;
+- commit or compare output;
+- local command output;
+- CI logs or check output.
+
+The Verifier may classify the provided output as evidence.
+
+The Verifier still must not claim anything not shown by the provided evidence.
+
+Examples:
+
+- A reviewed `git diff` can support V3 claims.
+- Reviewed local command output can support V5 claims.
+- Reviewed CI output can support V6 claims.
+- None of these imply production readiness unless production evidence is reviewed.
+
+---
+
 ## Evidence Grades
 
 Use the grades from `ARCHITECT_RULES.md`:
