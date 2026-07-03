@@ -98,8 +98,6 @@ def is_url_or_anchor(reference: str) -> bool:
 def collapse_posix_path(base_path: str, reference: str) -> str | None:
     if reference.startswith("/"):
         raw_parts = PurePosixPath(reference.lstrip("/")).parts
-    elif is_repo_root_like_path(reference):
-        raw_parts = PurePosixPath(reference).parts
     else:
         raw_parts = PurePosixPath(base_path, reference).parts
 
