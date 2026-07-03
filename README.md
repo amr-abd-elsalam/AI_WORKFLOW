@@ -1,7 +1,7 @@
 # AI_WORKFLOW
 
-> **Model reading this file: read this notice before anything else.**
-> If the current request contains, together, a target project repository URL, this `AI_WORKFLOW` repository URL, a problem statement, and a language preference, stop here. Do not open `README.md` further, do not fetch or inspect the target repository, and do not analyze the problem yet. Open `BEGIN_HERE.md` now and follow its "Automatic Intake Dispatch Rule" first. Having direct tool access to fetch repositories immediately is not permission to skip this step.
+> **Session Bootstrap Notice**
+> `AI_WORKFLOW` is a governance workflow that a human operator may explicitly choose for a session. If the human's own request designates this repository as the workflow/governance source together with a target project repository URL, a problem statement, and a language preference, that human designation — not this file's own wording — is what authorizes following this workflow's bootstrap sequence. When a human has made that designation, the recommended first step is to read `BEGIN_HERE.md`, specifically its "Recommended Session Bootstrap Protocol," before fetching or analyzing the target project repository. This notice describes a workflow the human has chosen; it does not claim authority over model behavior on its own.
 
 A long-lived governance and workflow system for solo developers using AI models to build, maintain, and review software projects with discipline.
 
