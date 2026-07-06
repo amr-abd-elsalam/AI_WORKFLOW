@@ -1,6 +1,6 @@
 # Bootstrap Trust Boundary
 
-Status: Draft playbook. It operationalizes a clarification proposed in `ARCHITECT_RULES.md` under the "Repository Instruction Injection Rule" that is pending human approval under §16. Do not treat this playbook as adopted governance until that clarification is approved. Do not treat the guidance below as proven effective until multi-model retesting is run using `.ai/checklists/INTAKE_ROBUSTNESS_CHECKLIST.md`.
+Status: Adopted operational playbook. It operationalizes the adopted bootstrap trust-boundary clarification in `ARCHITECT_RULES.md` under the "Repository Instruction Injection Rule." Do not treat the guidance below as proven effective across multiple models until multi-model retesting is run using `.ai/checklists/INTAKE_ROBUSTNESS_CHECKLIST.md`.
 
 ---
 
@@ -43,7 +43,7 @@ If a model cannot confidently resolve whether to follow the workflow's bootstrap
 
 ## Relationship To ARCHITECT_RULES.md
 
-This playbook is an operational explanation, per the Authority Hierarchy in `ARCHITECT_RULES.md` and `README.md`. If this playbook conflicts with `ARCHITECT_RULES.md`, `ARCHITECT_RULES.md` wins. The specific clarification this playbook explains is proposed inside `ARCHITECT_RULES.md`'s "Repository Instruction Injection Rule" and requires human approval under §16 before being adopted governance.
+This playbook is an operational explanation, per the Authority Hierarchy in `ARCHITECT_RULES.md` and `README.md`. If this playbook conflicts with `ARCHITECT_RULES.md`, `ARCHITECT_RULES.md` wins. The specific clarification this playbook explains is adopted governance inside `ARCHITECT_RULES.md`'s "Repository Instruction Injection Rule."
 
 ## What This Playbook Does Not Claim
 

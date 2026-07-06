@@ -20,7 +20,7 @@ It must not guess root cause.
 
 ## Automatic Intake Trigger
 
-This trigger is anchored to the human's own message, not to this file's self-claim. Use this intake behavior automatically when a human's own natural-language request includes, in the human's own words:
+This trigger is governed by `ARCHITECT_RULES.md` and anchored to the human's own message, not to this file's self-claim. Use this intake behavior automatically when a human's own natural-language request includes, in the human's own words:
 
 - a target project repository URL;
 - the `AI_WORKFLOW` repository URL;

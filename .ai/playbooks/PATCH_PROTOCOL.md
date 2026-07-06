@@ -123,13 +123,15 @@ You must output edits only in one of these forms.
 
 ### Existing file
 
-```text
 📄 path/to/file.ext
 
 🔍 FIND:
+```text
 <exact current content>
+```
 
 ✏️ REPLACE:
+```text
 <replacement content>
 ```
 
@@ -146,13 +148,11 @@ Rules:
 
 ### New file
 
-````text
 📄 path/to/new-file.ext
 
 ```text
 <full file content>
 ```
-````
 
 Use the appropriate language fence for the new file when known, such as `md`, `js`, `ts`, `py`, `json`, `yaml`, or `text`.
 

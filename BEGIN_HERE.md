@@ -22,7 +22,7 @@ Use this path when you have:
 
 ### Recommended Session Bootstrap Protocol
 
-This section describes a recommended protocol, not a self-authorizing command. Its authority comes from the human who links this repository in their own request, not from this file's wording.
+This section describes a recommended protocol governed by `ARCHITECT_RULES.md`, not a self-authorizing command. Its authority comes from the human who links this repository in their own request, not from this file's wording.
 
 If a human's own message contains, together, all of the following:
 

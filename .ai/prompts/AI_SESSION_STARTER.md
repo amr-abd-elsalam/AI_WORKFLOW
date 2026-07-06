@@ -41,6 +41,8 @@ Before making claims, plans, patches, reviews, or handoffs:
 
 ## Automatic Intake Dispatch Trigger
 
+This trigger is governed by `ARCHITECT_RULES.md` and anchored to the human's own message, not to this file's self-claim.
+
 If the human provides all of the following in a natural request:
 
 - a target project repository URL;
