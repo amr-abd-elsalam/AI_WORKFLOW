@@ -5,6 +5,14 @@ Rule 1:
 Check Markdown references that look like actual workflow repository file paths
 and ensure they resolve to files that exist in this repository.
 
+Rule 2:
+For each .ai/prompts/*.md file that contains the literal heading
+"## Required Output", require at least one heading line (any heading level,
+one to six "#" characters) after that point whose text starts with
+"Prompt For Next Role", or any line after that point containing the literal
+substring "NEXT_ROLE_PROMPT". Files without the "## Required Output" heading
+are not checked by this rule.
+
 This is intentionally not a general Markdown linter, external link checker,
 anchor checker, reference-label checker, or semantic governance validator.
 """
@@ -43,6 +51,13 @@ EXAMPLE_PATH_PREFIXES = (
     "path/to/",
 )
 
+PROMPTS_DIR = REPO_ROOT / ".ai" / "prompts"
+
+REQUIRED_OUTPUT_HEADING = "## Required Output"
+NEXT_ROLE_HEADING_TEXT = "Prompt For Next Role"
+NEXT_ROLE_SUBSTRING = "NEXT_ROLE_PROMPT"
+
+HEADING_LINE_RE = re.compile(r"^#{1,6}\s+(.*)$")
 FENCE_MARKER_RE = re.compile(r"^\s*(```|~~~)")
 MARKDOWN_LINK_TARGET_RE = re.compile(r"!?\[[^\]\n]*\]\(\s*([^)\s]+)(?:\s+[^)]*)?\)")
 REFERENCE_LINK_DEFINITION_RE = re.compile(r"^\s{0,3}\[[^\]\n]+\]:\s*(\S+)")
@@ -235,6 +250,42 @@ def iter_markdown_references(markdown_file: Path):
                 yield line_number, reference, "inline_code"
 
 
+def prompt_files() -> list[Path]:
+    if not PROMPTS_DIR.is_dir():
+        return []
+
+    return sorted(
+        path
+        for path in PROMPTS_DIR.glob("*.md")
+        if path.is_file() and not is_ignored_tree(path)
+    )
+
+
+def has_next_role_heading_after_required_output(markdown_file: Path) -> bool | None:
+    lines = markdown_file.read_text(encoding="utf-8").splitlines()
+    required_output_line_index: int | None = None
+
+    for line_index, line in enumerate(lines):
+        if line.strip() == REQUIRED_OUTPUT_HEADING:
+            required_output_line_index = line_index
+            break
+
+    if required_output_line_index is None:
+        return None
+
+    for line in lines[required_output_line_index + 1:]:
+        stripped_line = line.strip()
+
+        heading_match = HEADING_LINE_RE.match(stripped_line)
+        if heading_match and heading_match.group(1).startswith(NEXT_ROLE_HEADING_TEXT):
+            return True
+
+        if NEXT_ROLE_SUBSTRING in stripped_line:
+            return True
+
+    return False
+
+
 def main() -> int:
     repo_files = existing_repo_files()
     failures: list[str] = []
@@ -253,6 +304,19 @@ def main() -> int:
                     f"{markdown_path}:{line_number}: {candidate}: "
                     "referenced workflow repository path does not resolve to an existing file"
                 )
+
+    for prompt_file in prompt_files():
+        prompt_path = to_repo_posix_path(prompt_file)
+        has_next_role_heading = has_next_role_heading_after_required_output(prompt_file)
+
+        if has_next_role_heading is False:
+            failures.append(
+                f"{prompt_path}: missing required next-role heading "
+                f"(expected a heading whose text starts with "
+                f"'{NEXT_ROLE_HEADING_TEXT}' at any heading level, or a line "
+                f"containing '{NEXT_ROLE_SUBSTRING}') after "
+                f"'{REQUIRED_OUTPUT_HEADING}'"
+            )
 
     if failures:
         print("governance-lint: found unresolved Markdown workflow file references", file=sys.stderr)
