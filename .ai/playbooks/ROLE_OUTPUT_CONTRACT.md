@@ -124,6 +124,10 @@ Missing `NEXT_ROLE_PROMPT` makes the role output incomplete.
 
 The `NEXT_ROLE_PROMPT` artifact must be the final section of the role output.
 
+The canonical artifact name is `NEXT_ROLE_PROMPT`; a Markdown heading whose text starts with `Prompt For Next Role`, including extended forms such as `Prompt For Next Role Or Human Decision Packet`, is an acceptable compatible realization of that final artifact and matches the current `scripts/governance_lint.py` Rule 2 acceptance pattern.
+
+A Human Operator decision packet inside that final next-role section does not violate this contract when the next step is escalation or human-only Operator work; this is a documentation clarification only and does not intentionally change behavior, structure, lint logic, or runtime.
+
 The artifact must contain a copy/paste-ready fenced `text` prompt for the next role unless the correct next step is escalation or human-only Operator work.
 
 If escalation or human-only Operator work applies, the final `NEXT_ROLE_PROMPT` section must still be present and must contain `NOT APPLICABLE` plus the reason.
