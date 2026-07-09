@@ -70,6 +70,16 @@ Templates are stable reusable skeletons. They are not project state.
 
 ---
 
+## Which Worked Example Should I Read?
+
+Worked examples are fictional walkthroughs. They are not project state.
+
+| Situation | Example |
+|---|---|
+| Seeing an L1 docs-only role sequence end to end | `.ai/examples/WORKED_EXAMPLE_L1.md` |
+
+---
+
 ## Which Checklist Should I Use?
 
 | Situation | Checklist |
