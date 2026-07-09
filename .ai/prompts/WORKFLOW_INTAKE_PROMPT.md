@@ -176,6 +176,7 @@ Copy and paste this prompt:
 
 ```text
 Role: Architect
+Canonical prompt file for this role: `.ai/prompts/ARCHITECT_PROMPT.md`
 
 Task:
 Plan the smallest safe workflow for the human's request before any implementation.

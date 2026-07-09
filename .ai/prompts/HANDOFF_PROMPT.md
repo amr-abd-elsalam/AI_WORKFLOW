@@ -189,6 +189,7 @@ Handoff Scribe
 
 ```text
 Role: [Architect / Reader / Executor / Verifier / Handoff Scribe]
+Canonical prompt file for this role: [`.ai/prompts/ARCHITECT_PROMPT.md` / `.ai/prompts/READER_PROMPT.md` / `.ai/prompts/EXECUTOR_PROMPT.md` / `.ai/prompts/VERIFIER_PROMPT.md` / `.ai/prompts/HANDOFF_PROMPT.md`]
 
 Task:
 [State the exact next task for the next session.]

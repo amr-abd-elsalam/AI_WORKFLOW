@@ -216,6 +216,7 @@ Choose one:
 
 ```text
 Role: [Reader / Architect / Verifier / Handoff Scribe / Human Operator decision packet]
+Canonical prompt file for this role: [`.ai/prompts/READER_PROMPT.md` / `.ai/prompts/ARCHITECT_PROMPT.md` / `.ai/prompts/VERIFIER_PROMPT.md` / `.ai/prompts/HANDOFF_PROMPT.md` / `NOT APPLICABLE — human-only decision, no AI prompt file`]
 
 Task:
 [State the exact next task. If evidence is missing, ask Reader to gather it. If scope or risk needs replanning, ask Architect. If another readiness challenge is needed, ask Verifier. If the review should be preserved, ask Handoff Scribe. If the next step is release/deployment execution, provide a Human Operator decision packet instead of assigning AI as Operator.]

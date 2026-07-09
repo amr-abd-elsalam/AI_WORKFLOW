@@ -159,6 +159,7 @@ Reader
 
 ```text
 Role: [Executor / Architect / Verifier / Handoff Scribe]
+Canonical prompt file for this role: [`.ai/prompts/EXECUTOR_PROMPT.md` / `.ai/prompts/ARCHITECT_PROMPT.md` / `.ai/prompts/VERIFIER_PROMPT.md` / `.ai/prompts/HANDOFF_PROMPT.md`]
 
 Task:
 [State the exact next task. If evidence is sufficient, ask Executor for the smallest safe patch. If evidence is insufficient, ask Architect to re-plan or ask for missing files.]

@@ -184,6 +184,7 @@ Architect
 
 ```text
 Role: Reader
+Canonical prompt file for this role: `.ai/prompts/READER_PROMPT.md`
 
 Task:
 Build an evidence map for this task before any implementation.

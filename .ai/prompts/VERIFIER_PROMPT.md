@@ -243,6 +243,7 @@ Verifier
 
 ```text
 Role: [Executor / Reader / Architect / Handoff Scribe]
+Canonical prompt file for this role: [`.ai/prompts/EXECUTOR_PROMPT.md` / `.ai/prompts/READER_PROMPT.md` / `.ai/prompts/ARCHITECT_PROMPT.md` / `.ai/prompts/HANDOFF_PROMPT.md`]
 
 Task:
 [State the exact next task. If findings require changes, ask Executor for a minimal correction patch. If evidence is missing, ask Reader to gather the missing evidence. If the plan needs reshaping, ask Architect. If acceptable within reviewed scope, ask Handoff Scribe to record an accurate handoff.]

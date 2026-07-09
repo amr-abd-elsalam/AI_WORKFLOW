@@ -130,6 +130,8 @@ A Human Operator decision packet inside that final next-role section does not vi
 
 The artifact must contain a copy/paste-ready fenced `text` prompt for the next role unless the correct next step is escalation or human-only Operator work.
 
+Every `NEXT_ROLE_PROMPT` must explicitly name the next role's canonical prompt file from `.ai/prompts/` (for example, `.ai/prompts/READER_PROMPT.md` for `Role: Reader`) immediately alongside the `Role:` line, not only the role name. When multiple roles are possible, list the matching canonical file for each bracketed role option in the same order as the bracketed roles. If the next step is escalation or human-only Operator work with no applicable AI role, state `NOT APPLICABLE — human-only decision, no AI prompt file` instead of a file path. A `NEXT_ROLE_PROMPT` that names a role without naming its canonical prompt file is incomplete under this contract.
+
 If escalation or human-only Operator work applies, the final `NEXT_ROLE_PROMPT` section must still be present and must contain `NOT APPLICABLE` plus the reason.
 
 The transfer packet must reduce ambiguity without becoming source authority.
@@ -141,6 +143,7 @@ The prompt must be directly usable by another AI model.
 It must include:
 
 - next role;
+- canonical prompt file for the next role from `.ai/prompts/` (or `NOT APPLICABLE` plus reason for human-only Operator work or escalation);
 - task;
 - named `Repository Context Packet`;
 - repository access mode;
@@ -221,6 +224,7 @@ Prompts may adapt it, but must preserve the same information.
 
 ```text
 Role: [Next Role]
+Canonical prompt file for this role: [`.ai/prompts/<ROLE>_PROMPT.md` matching the named Role, or `NOT APPLICABLE — human-only decision, no AI prompt file`]
 
 Task:
 [...]

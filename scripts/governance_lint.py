@@ -13,6 +13,15 @@ one to six "#" characters) after that point whose text starts with
 substring "NEXT_ROLE_PROMPT". Files without the "## Required Output" heading
 are not checked by this rule.
 
+Rule 3:
+For each .ai/prompts/*.md file that contains the literal heading
+"## Required Output", require at least one line after that point containing
+the literal substring ".ai/prompts/", naming the next role's canonical
+prompt file inside the NEXT_ROLE_PROMPT artifact. Files without the
+"## Required Output" heading are not checked by this rule. This is a
+narrow textual presence check; it does not verify that the named file
+matches the selected role or that the reference is semantically correct.
+
 This is intentionally not a general Markdown linter, external link checker,
 anchor checker, reference-label checker, or semantic governance validator.
 """
@@ -56,6 +65,7 @@ PROMPTS_DIR = REPO_ROOT / ".ai" / "prompts"
 REQUIRED_OUTPUT_HEADING = "## Required Output"
 NEXT_ROLE_HEADING_TEXT = "Prompt For Next Role"
 NEXT_ROLE_SUBSTRING = "NEXT_ROLE_PROMPT"
+NEXT_ROLE_FILE_REFERENCE_SUBSTRING = ".ai/prompts/"
 
 HEADING_LINE_RE = re.compile(r"^#{1,6}\s+(.*)$")
 FENCE_MARKER_RE = re.compile(r"^\s*(```|~~~)")
@@ -286,6 +296,25 @@ def has_next_role_heading_after_required_output(markdown_file: Path) -> bool | N
     return False
 
 
+def has_canonical_prompt_file_reference_after_required_output(markdown_file: Path) -> bool | None:
+    lines = markdown_file.read_text(encoding="utf-8").splitlines()
+    required_output_line_index: int | None = None
+
+    for line_index, line in enumerate(lines):
+        if line.strip() == REQUIRED_OUTPUT_HEADING:
+            required_output_line_index = line_index
+            break
+
+    if required_output_line_index is None:
+        return None
+
+    for line in lines[required_output_line_index + 1:]:
+        if NEXT_ROLE_FILE_REFERENCE_SUBSTRING in line:
+            return True
+
+    return False
+
+
 def main() -> int:
     repo_files = existing_repo_files()
     failures: list[str] = []
@@ -316,6 +345,16 @@ def main() -> int:
                 f"'{NEXT_ROLE_HEADING_TEXT}' at any heading level, or a line "
                 f"containing '{NEXT_ROLE_SUBSTRING}') after "
                 f"'{REQUIRED_OUTPUT_HEADING}'"
+            )
+
+        has_canonical_file_reference = has_canonical_prompt_file_reference_after_required_output(prompt_file)
+
+        if has_canonical_file_reference is False:
+            failures.append(
+                f"{prompt_path}: missing canonical prompt file reference "
+                f"(expected a line containing '{NEXT_ROLE_FILE_REFERENCE_SUBSTRING}' "
+                f"after '{REQUIRED_OUTPUT_HEADING}', naming the next role's "
+                f"canonical prompt file)"
             )
 
     if failures:

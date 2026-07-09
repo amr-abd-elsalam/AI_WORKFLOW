@@ -35,7 +35,7 @@ Before making claims, plans, patches, reviews, or handoffs:
    - `UNKNOWN`
 12. Prefer the smallest safe change.
 13. Escalate if evidence is missing or risk increases.
-14. For every non-trivial role output, end with a canonical `NEXT_ROLE_PROMPT` artifact that is directly usable by the next AI pass. Missing `NEXT_ROLE_PROMPT` makes the role output incomplete. If the next step is escalation or human-only Operator work, still include `NEXT_ROLE_PROMPT` with `NOT APPLICABLE` plus the reason.
+14. For every non-trivial role output, end with a canonical `NEXT_ROLE_PROMPT` artifact that is directly usable by the next AI pass. The `NEXT_ROLE_PROMPT` must name the next role's canonical prompt file from `.ai/prompts/` (for example, `.ai/prompts/READER_PROMPT.md` for `Role: Reader`), not only the role name. Missing `NEXT_ROLE_PROMPT`, or naming a role without its canonical prompt file, makes the role output incomplete. If the next step is escalation or human-only Operator work, still include `NEXT_ROLE_PROMPT` with `NOT APPLICABLE` plus the reason.
 
 ---
 

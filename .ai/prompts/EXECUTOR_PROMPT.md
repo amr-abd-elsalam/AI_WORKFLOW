@@ -210,6 +210,7 @@ Verifier
 
 ```text
 Role: Verifier
+Canonical prompt file for this role: `.ai/prompts/VERIFIER_PROMPT.md`
 
 Task:
 Challenge the proposed patch and claims before acceptance.

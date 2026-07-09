@@ -103,6 +103,7 @@ Include either a copy/paste-ready fenced `text` prompt for the next role, or `NO
 
 ```text
 Role: [Next Role]
+Canonical prompt file for this role: [`.ai/prompts/<ROLE>_PROMPT.md` matching the named Role, or `NOT APPLICABLE — human-only decision, no AI prompt file`]
 
 Task:
 [...]
